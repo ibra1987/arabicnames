@@ -4,12 +4,12 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Link from "next/link";
 
 const SinglePost = ({ post }) => {
-  const { featuredImage, title, body, excerpt, slug } = post.fields;
+  const { featuredImage, title, excerpt, slug } = post.fields;
   const lazyRoot = useRef(null);
 
   return (
     <div
-      className="w-full p-2 bg-gray-50 shadow-md flex flex-col justify-start items-center  rounded-md border "
+      className="p-2 bg-gray-50  shadow-md flex flex-col justify-start items-center  rounded-md border "
       ref={lazyRoot}
     >
       <Link href={`/blog/${slug.split(" ").join("-")}`}>
@@ -18,7 +18,7 @@ const SinglePost = ({ post }) => {
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
           lazyRoot={lazyRoot}
-          className="scale cursor-pointer"
+          className="scale cursor-pointer rounded-md"
         />
       </Link>
       <Link href={`/blog/${slug.split(" ").join("-")}`}>

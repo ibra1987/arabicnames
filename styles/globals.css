@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Lato&family=Poppins:wght@300&family=Roboto:wght@300;400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,7 +26,12 @@ a {
 .popins {
   font-family: "Poppins", sans-serif;
 }
-
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+.lato {
+  font-family: "lato", sans-serif;
+}
 .scale:hover {
   transform: scale(1.05);
   transition: ease-in-out 0.2s;

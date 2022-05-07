@@ -8,44 +8,44 @@ const NavBar = () => {
   //const { isLoading, loadingActions } = useContext(LoadingContext);
 
   return (
-    <nav className="flex justify-between items-center  py-4 ">
+    <nav className="flex justify-between items-center  ">
       <ul className=" flex  justify-end items-center px-2 ">
         <li
-          className="mx-4 
+          className="mx-2
         "
         >
           <Link href="/">
             <a
               className={
                 router.pathname === "/"
-                  ? "bg-pink-500 text-red px-4 py-2 rounded text-white transition duration-500 ease-in"
-                  : " bg-white text-pink-500 "
+                  ? "border-b border-gray-500 px-2 py-1  tracking-wider  text-white transition duration-750 ease-in"
+                  : "  text-white text-lg  px-2 py-1 pb-2transition border-b border-gray-600 duration-750 ease-in  hover:border-b hover:border-gray-500  "
               }
             >
               Home
             </a>
           </Link>
         </li>
-        <li className="mx-4 ">
+        <li className="mx-2">
           <Link href="/blog">
             <a
               className={
                 router.pathname === "/blog"
-                  ? "bg-pink-500 text-red px-4 py-2 rounded text-white transition duration-500 ease-in"
-                  : " bg-white text-pink-500"
+                  ? "border-b border-gray-500 px-2 py-1  tracking-wider  text-white transition duration-750 ease-in"
+                  : "  text-white text-lg  px-2 py-1 pb-2transition border-b border-gray-600 duration-750 ease-in  hover:border-b hover:border-gray-500 "
               }
             >
               Blog
             </a>
           </Link>
         </li>
-        <li className="mx-4 ">
+        <li className="mx-2">
           <Link href="/full-list">
             <a
               className={
                 router.pathname === "/full-list"
-                  ? "bg-pink-500 text-red px-4 py-2 rounded text-white transition duration-500 ease-in"
-                  : " bg-white text-pink-500"
+                  ? "border-b border-gray-500 px-2 py-1  tracking-wider  text-white transition duration-750 ease-in"
+                  : "  text-white text-lg  px-2 py-1 pb-2transition border-b border-gray-600 duration-750 ease-in  hover:border-b hover:border-gray-500 "
               }
             >
               Full List
