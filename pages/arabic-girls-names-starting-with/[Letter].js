@@ -6,7 +6,7 @@ import Name from "../../models/Name";
 
 const FullNamesList = ({ names }) => {
   const [filter, setfilter] = useState("");
-  const [namesList, setNamesList] = useState(JSON.parse(names));
+  const [namesList, setNamesList] = useState(names);
   if (!names) return <Skeleton redirect={true} />;
 
   const inputStyle =
@@ -33,7 +33,7 @@ const FullNamesList = ({ names }) => {
         />
       </div>
       <div className="w-full my-8 flex flex-col justify-start items-center text-sm md:text-lg">
-        {!displayedNames.length && (
+        {!displayedNames && (
           <div className="w-full  text-red-600 p-4 text-center">No results</div>
         )}
         {displayedNames &&
@@ -99,7 +99,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      names: JSON.stringify(names),
+      names: JSON.parse(JSON.stringify(names)),
       revalidate: 10,
     },
   };
