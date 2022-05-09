@@ -1,5 +1,4 @@
 import Hero from "../components/Home/Hero";
-import Name from "../models/Name";
 import LatestPosts from "../components/Home/LatestPosts";
 import Subscribe from "../components/Home/Subscribe";
 import RandomNames from "../components/Home/RandomNames";
