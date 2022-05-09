@@ -1,5 +1,4 @@
 import Hero from "../components/Home/Hero";
-import connecion from "../database/DBConnect";
 import Name from "../models/Name";
 import LatestPosts from "../components/Home/LatestPosts";
 import Subscribe from "../components/Home/Subscribe";
@@ -12,10 +11,14 @@ const Home = ({ posts, randomNames }) => {
     <section className="w-full relative flex flex-col justify-start items-center">
       <Hero />
       <LeaderBoard />
-      <h3 className="w-full text-center mt-10  tracking-widest text-3xl py-4 font-bold handWriting text-gray-700">
-        Random Names
-      </h3>
-      <RandomNames randomNames={JSON.parse(randomNames)} />
+      {randomNames && (
+        <>
+          <h3 className="w-full text-center mt-10  tracking-widest text-3xl py-4 font-bold handWriting text-gray-700">
+            Random Names
+          </h3>
+          <RandomNames randomNames={JSON.parse(randomNames)} />
+        </>
+      )}
       <h3 className="w-full text-center tracking-widest text-3xl py-4 font-bold handWriting text-gray-700">
         Latest Blog Posts
       </h3>
@@ -28,7 +31,7 @@ const Home = ({ posts, randomNames }) => {
 };
 export default Home;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await getAll("blog");
   const randomNames = await Name.aggregate([{ $sample: { size: 3 } }]);
 
@@ -37,6 +40,5 @@ export async function getStaticProps() {
       posts: res.items,
       randomNames: JSON.stringify(randomNames),
     },
-    revalidate: 10,
   };
 }
