@@ -19,6 +19,7 @@ const SinglePost = ({ post }) => {
           height={featuredImage.fields.file.details.image.height}
           lazyRoot={lazyRoot}
           className="scale cursor-pointer rounded-md"
+          alt="baby image"
         />
       </Link>
       <Link href={`/blog/${slug.split(" ").join("-")}`}>

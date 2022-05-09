@@ -24,6 +24,7 @@ const Slug = ({ post }) => {
           width={featuredImage.fields.file.details.image.width}
           height={featuredImage.fields.file.details.image.height}
           className=" cursor-pointer rounded-md"
+          alt="baby-girl-image"
         />
         <div className=" my-2 w-full grid grid-cols-3 gap-1 text-xs">
           <div className="">

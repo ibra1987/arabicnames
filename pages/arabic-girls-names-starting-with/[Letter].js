@@ -5,9 +5,10 @@ import connection from "../../database/DBConnect";
 import Name from "../../models/Name";
 
 const FullNamesList = ({ names }) => {
-  if (!names) return <Skeleton redirect={true} />;
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(JSON.parse(names));
+  if (!names) return <Skeleton redirect={true} />;
+
   const inputStyle =
     "w-3/5 border-2 border-pink-200 outline-none bg-white focus:border-pink-400 p-2 text-gray-700";
   const displayedNames = !filter

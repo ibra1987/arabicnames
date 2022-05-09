@@ -12,7 +12,7 @@ const Skeleton = ({ redirect }) => {
     }
 
     return () => clearTimeout();
-  }, [redirect]);
+  }, [redirect, router]);
   return (
     <section className="w-full  p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start bg-gray-100 lato ">
       <div className="bg-white border rounded h-screen py-4  my-4 w-1/12 flex flex-col justify-start items-center">
