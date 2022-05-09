@@ -30,7 +30,7 @@ const NavBar = () => {
           <Link href="/blog">
             <a
               className={
-                router.pathname === "/blog"
+                router.pathname.includes("/blog")
                   ? "border-b border-gray-500 px-2 py-1  tracking-wider  text-white transition duration-750 ease-in"
                   : "  text-white text-lg  px-2 py-1 pb-2transition border-b border-gray-600 duration-750 ease-in  hover:border-b hover:border-gray-500 "
               }
@@ -40,10 +40,10 @@ const NavBar = () => {
           </Link>
         </li>
         <li className="mx-2">
-          <Link href="/full-list">
+          <Link href="/arabic-girls-names-with-meaning">
             <a
               className={
-                router.pathname === "/full-list"
+                router.pathname === "/arabic-girls-names-with-meaning"
                   ? "border-b border-gray-500 px-2 py-1  tracking-wider  text-white transition duration-750 ease-in"
                   : "  text-white text-lg  px-2 py-1 pb-2transition border-b border-gray-600 duration-750 ease-in  hover:border-b hover:border-gray-500 "
               }

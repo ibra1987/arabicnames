@@ -16,7 +16,7 @@ const Hero = () => {
     console.log("clicked");
   };
   return (
-    <section className=" py-2 w-4/5 flex absolute -mt-24  shadow-lg rounded-md bg-gray-100  border-b flex-col justify-center  items-center ">
+    <section className=" py-10 w-4/5 flex absolute -mt-24  shadow-lg rounded-md bg-gray-100  border-b flex-col justify-center  items-center ">
       <h2 className="tracking-widest text-3xl text-gray-600 handWriting text-center font-extrabold">
         Find An Arabic Name Four Your Baby Girl
       </h2>

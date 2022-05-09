@@ -1,0 +1,33 @@
+import RandomName from "./RandomName";
+import getRandomNames from "../../utils/http/names/getRandomNames";
+import Button from "../Shared/Button";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
+const RandomNames = ({ randomNames }) => {
+  const [names, setNames] = useState(randomNames);
+  const [loading, setLoading] = useState(false);
+  const btnStyles =
+    "w-1/4 bg-white text-gray-700 tracking-widest font-bold my-6 py-2 rounded-md hover:text-white ease-in duration-300  outline-none border underline shadow-md border-gray-700 hover:bg-gray-700";
+  const handleClick = async () => {
+    setLoading(true);
+    const res = await axios.get("/api/names/random-names");
+    setNames(res.data);
+    setLoading(false);
+  };
+  return (
+    <section className="w-11/12 md:w-full p-2  flex flex-col justify-start items-center ">
+      <div className="w-full  gap-2 grid grid-cols-1 sm:grid-cols-3">
+        {names &&
+          names.map((name) => <RandomName name={name} key={name._id} />)}
+      </div>
+      <Button
+        styles={btnStyles}
+        text={"Generate new names"}
+        clickHandler={handleClick}
+      />
+    </section>
+  );
+};
+
+export default RandomNames;

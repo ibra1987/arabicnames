@@ -4,18 +4,20 @@ import getSingleBySlug from "../../utils/contentful/getSingleBySlug";
 import Link from "next/link";
 import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import moment from "moment";
+import SideBar from "../../components/Shared/SideBar";
+import Skeleton from "../../components/Shared/Skeleton";
 
 const Slug = ({ post }) => {
-  if (!post) return <div>Loading...</div>;
+  if (!post) return <Skeleton />;
 
   const { featuredImage, title, tags, body } = post?.fields;
-  console.log(post);
 
   return (
-    <section className="w-full  p-2 flex justify-around items-center bg-gray-100 lato">
-      <div className="w-4/6 p-4 flex flex-col justify-start items-center my-4 bg-white border rounded-md ">
+    <section className="w-full  p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start bg-gray-100 lato ">
+      <div className="bg-white rounded-md my-4 w-1/12">Shares</div>
+      <div className="w-10/12 md:w-7/12 p-4 flex flex-col justify-start items-center my-4 bg-white border rounded-md ">
         <h1 className="text-5xl text-pink-500 py-4 font-extrabold ">{title}</h1>
         <Image
           src={"https:" + featuredImage.fields.file.url}
@@ -54,12 +56,22 @@ const Slug = ({ post }) => {
                 return (
                   <p
                     data-id={body.content.indexOf(node)}
-                    className="indent-2 leading-10  my-4 text-lg text-gray-700"
+                    className="indent-2 leading-10  my-4 text-lg text-gray-600"
                   >
                     {children}
                   </p>
                 );
               },
+              /*[INLINES.HYPERLINK]:(node, children)=>{
+
+                return (
+                    <Link>
+                    <a>
+
+                    </a>
+                    </Link>
+                )
+              }*/
             },
           })}{" "}
         </div>
@@ -81,6 +93,7 @@ const Slug = ({ post }) => {
           </div>
         </div>
       </div>
+      <SideBar />
     </section>
   );
 };
