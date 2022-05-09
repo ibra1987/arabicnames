@@ -1,10 +1,11 @@
-import { getDisplayName } from "next/dist/shared/lib/utils";
 import { useState } from "react";
-import SearchInput from "../components/Home/SearchInput";
-import connection from "../database/DBConnect";
-import Name from "../models/Name";
+import SearchInput from "../../components/Home/SearchInput";
+import Skeleton from "../../components/Shared/Skeleton";
+import connection from "../../database/DBConnect";
+import Name from "../../models/Name";
 
 const FullNamesList = ({ names }) => {
+  if (!names) return <Skeleton redirect={true} />;
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(JSON.parse(names));
   const inputStyle =
@@ -61,14 +62,44 @@ const FullNamesList = ({ names }) => {
 
 export default FullNamesList;
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  await connection();
+  const response = await Name.find();
+  const names = JSON.parse(JSON.stringify(response));
+
+  const letters = names.map((name) => {
+    return name["Name"].charAt(0).toLocaleLowerCase();
+  });
+  const uniqueLetters = [...new Set(letters)];
+
+  const paths = uniqueLetters.map((l) => {
+    return { params: { Letter: l } };
+  });
+
+  return {
+    paths,
+    fallback: true,
+  };
+}
+export async function getStaticProps({ params }) {
+  const letter = params.Letter;
   await connection();
 
-  const names = await Name.find();
+  const names = await Name.find({
+    Name: { $regex: "^" + letter, $options: "i" },
+  });
+  if (!names) {
+    return {
+      props: {
+        names: [],
+      },
+    };
+  }
+
   return {
     props: {
       names: JSON.stringify(names),
+      revalidate: 10,
     },
-    revalidate: 60 * 60,
   };
 }
