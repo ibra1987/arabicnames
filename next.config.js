@@ -5,8 +5,8 @@ const nextConfig = {
     domains: ["images.ctfassets.net"],
   },
   env: {
-    CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACEID,
-    CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_DELIVERY_KEY,
+    CONTENTFUL_SPACEID: process.env.CONTENTFUL_SPACEID,
+    CONTENTFUL_DELIVERY_KEY: process.env.CONTENTFUL_DELIVERY_KEY,
   },
 };
 
