@@ -10,12 +10,29 @@ const FullNamesList = ({ names }) => {
   const inputStyle =
     "w-3/5 border-2 border-pink-200 outline-none bg-white focus:border-pink-400 p-2 text-gray-700";
   const displayedNames = !filter
-    ? namesList
+    ? namesList.sort((a, b) => {
+        if (a.Name.toLowerCase() < b.Name.toLowerCase()) {
+          return -1;
+        }
+        if (a.Name.toLowerCase() > b.Name.toLowerCase()) {
+          return 1;
+        }
+        return 0;
+      })
     : namesList
+        .sort((a, b) => {
+          if (a.Name.toLowerCase() < b.Name.toLowerCase()) {
+            return -1;
+          }
+          if (a.Name.toLowerCase() > b.Name.toLowerCase()) {
+            return 1;
+          }
+          return 0;
+        })
         .filter((name) =>
-          name["Name"].toLocaleLowerCase().includes(filter.toLocaleLowerCase())
-        )
-        .sort((a, b) => a["Name"] - b["Name"]);
+          name["Name"].toLowerCase().includes(filter.toLowerCase())
+        );
+
   const handleOnChange = (e) => {
     setfilter(e.target.value);
   };
@@ -42,7 +59,7 @@ const FullNamesList = ({ names }) => {
                 <span className="w-1/3 md:w-2/4 text-left">{name.Meaning}</span>
                 <audio
                   controls
-                  className="w-2/4 md:w-1/5 h-4"
+                  className="w-2/4 md:w-1/5 h-8"
                   src={`/audio/femaleNames/${name.Name}.mp3`}
                 >
                   Your browser does not support the
