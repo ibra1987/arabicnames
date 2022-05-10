@@ -1,13 +1,19 @@
 import connection from "../../../database/DBConnect";
 import RandomName from "../../../models/RandomName";
 import Name from "../../../models/Name";
-import defineCors from "../../../utils/http/defineCors";
+import NextCors from "nextjs-cors";
 
 async function handler(req, res) {
   if (req.method !== "POST") {
     return res.redirect(307, "/");
   }
-  await defineCors();
+  await await NextCors(req, res, {
+    // Options
+    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    origin: "*",
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  });
+
   const { token } = req.body;
   if (!token) return res.redirect(307, "/");
   const SECRET = process.env.RANDOM_NAMES_SECRET;
@@ -24,7 +30,7 @@ async function handler(req, res) {
 
     res.json(inserted);
   } catch (error) {
-    console.log(error.message);
+    res.json(error.message);
   }
 }
 
