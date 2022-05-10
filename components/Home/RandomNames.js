@@ -8,7 +8,13 @@ const RandomNames = () => {
   const [names, setNames] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    getNames();
+    let mounted = true;
+
+    getNames().then((names) => {
+      if (mounted) setNames(names);
+    });
+
+    return () => (mounted = false);
   }, []);
   const getNames = async () => {
     try {
@@ -23,8 +29,7 @@ const RandomNames = () => {
           },
         }
       );
-      console.log(response.data);
-      setNames(response.data);
+      return response.data;
     } catch (error) {
       console.log(error);
     }
