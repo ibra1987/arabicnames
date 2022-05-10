@@ -18,10 +18,8 @@ async function handler(req, res) {
 
     const names = await Name.aggregate([{ $sample: { size: 3 } }]);
 
-    const inserted = await RandomName.insertMany(
-      JSON.parse(JSON.stringify(names))
-    );
-    console.log("hit");
+    const inserted = await RandomName.insertMany(names);
+
     res.json(inserted);
   } catch (error) {
     console.log(error.message);
