@@ -24,9 +24,6 @@ const RandomNames = () => {
   const [names, setNames] = useState(defaultNames);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    getNames();
-  }, []);
   const getNames = async () => {
     try {
       const response = await axios.post(
