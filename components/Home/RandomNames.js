@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const RandomNames = () => {
-  const [names, setNames] = useState(null);
+  const [names, setNames] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     getNames();
@@ -36,7 +36,7 @@ const RandomNames = () => {
   return (
     <section className="w-11/12 md:w-full p-2  flex flex-col justify-start items-center ">
       <div className="w-full  gap-2 grid grid-cols-1 sm:grid-cols-3">
-        {names &&
+        {names.length > 0 &&
           names.map((name) => <RandomName name={name} key={name._id} />)}
       </div>
     </section>
