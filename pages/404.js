@@ -24,9 +24,9 @@ const NotFound = () => {
       <h2>Oops! We could not find the requested page :(</h2>
       <div>
         We {"couldn't"} find the requested page. Redirecting to&nbsp;
-        <Link href="/">
-          <a className="text-pink-500 ">Homepage...{timer}</a>
-        </Link>
+        <a className="text-pink-500 ">
+          <Link href="/">Homepage...{timer} </Link>
+        </a>
       </div>
     </section>
   );

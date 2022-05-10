@@ -38,9 +38,10 @@ const Slug = ({ post }) => {
           </div>
           <div className=" ">
             | <span className="text-pink-500 font-bold"> Image Source :</span>{" "}
-            <Link href="https://pixabay.com">
-              <a>pixabay.com</a>
-            </Link>
+            <a>
+              {" "}
+              <Link href="https://pixabay.com">pixabay.com</Link>
+            </a>
           </div>
         </div>
         <div>

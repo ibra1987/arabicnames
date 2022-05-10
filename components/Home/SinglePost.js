@@ -13,14 +13,16 @@ const SinglePost = ({ post }) => {
       ref={lazyRoot}
     >
       <Link passHref href={`/blog/${slug.split(" ").join("-")}`}>
-        <Image
-          src={"https:" + featuredImage.fields.file.url}
-          width={featuredImage.fields.file.details.image.width}
-          height={featuredImage.fields.file.details.image.height}
-          lazyRoot={lazyRoot}
-          className="scale cursor-pointer rounded-md"
-          alt="baby image"
-        />
+        <a>
+          <Image
+            src={"https:" + featuredImage.fields.file.url}
+            width={featuredImage.fields.file.details.image.width}
+            height={featuredImage.fields.file.details.image.height}
+            lazyRoot={lazyRoot}
+            className="scale cursor-pointer rounded-md"
+            alt="baby image"
+          />
+        </a>
       </Link>
       <Link passHref href={`/blog/${slug.split(" ").join("-")}`}>
         <h2 className="w-full text-left  text-pink-500 text-xl my-4 cursor-pointer hover:underline">
