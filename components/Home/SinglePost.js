@@ -12,7 +12,7 @@ const SinglePost = ({ post }) => {
       className="p-2 bg-gray-50  shadow-md flex flex-col justify-start items-center  rounded-md border "
       ref={lazyRoot}
     >
-      <Link passHref href={`/blog/${slug.split(" ").join("-")}`}>
+      <Link href={`/blog/${slug.split(" ").join("-")}`}>
         <a>
           <Image
             src={"https:" + featuredImage.fields.file.url}
@@ -24,14 +24,14 @@ const SinglePost = ({ post }) => {
           />
         </a>
       </Link>
-      <Link passHref href={`/blog/${slug.split(" ").join("-")}`}>
+      <Link href={`/blog/${slug.split(" ").join("-")}`}>
         <h2 className="w-full text-left  text-pink-500 text-xl my-4 cursor-pointer hover:underline">
           {title}
         </h2>
       </Link>
       <p className="w-full text-sm p-2 text-left text-gray-700 ">
         {excerpt}...
-        <Link passHref href={`/blog/${slug.split(" ").join("-")}`}>
+        <Link href={`/blog/${slug.split(" ").join("-")}`}>
           <a className=" underline text-pink-600">Continue reading</a>
         </Link>
       </p>
