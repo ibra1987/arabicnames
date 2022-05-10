@@ -3,8 +3,6 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 const RandomNames = () => {
-  const [names, setNames] = useState([]);
-  const [loading, setLoading] = useState(false);
   const defaultNames = [
     {
       _id: "61cf89527315e1586e0c037b",
@@ -23,6 +21,9 @@ const RandomNames = () => {
       Meaning: "means the beginnings",
     },
   ];
+  const [names, setNames] = useState(defaultNames);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     getNames();
   }, []);
@@ -42,7 +43,6 @@ const RandomNames = () => {
       if (response.status === 200) {
         return setNames(response.data);
       }
-      return setNames(defaultNames);
     } catch (error) {
       console.log(error);
     }
