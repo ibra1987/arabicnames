@@ -1,20 +1,30 @@
 import RandomName from "./RandomName";
-import getRandomNames from "../../utils/http/names/getRandomNames";
-import Button from "../Shared/Button";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
 const RandomNames = () => {
   const [names, setNames] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    let mounted = true;
+  const defaultNames = [
+    {
+      _id: "61cf89527315e1586e0c037b",
+      Name: "Assia",
+      Meaning: "confort person or sad meditating",
+    },
+    {
+      _id: "61ce357390bd324aca2226e1",
+      Name: "Arij",
+      Meaning: "Good fragrant scent.",
+    },
 
-    getNames().then((names) => {
-      if (mounted) setNames(names);
-    });
-    console.log(names);
-    return () => (mounted = false);
+    {
+      __id: "61cf8b547315e1586e0c0387",
+      Name: "Bacha'ir",
+      Meaning: "means the beginnings",
+    },
+  ];
+  useEffect(() => {
+    getNames();
   }, []);
   const getNames = async () => {
     try {
@@ -29,7 +39,10 @@ const RandomNames = () => {
           },
         }
       );
-      return response.data;
+      if (response.status === 200) {
+        return setNames(response.data);
+      }
+      return setNames(defaultNames);
     } catch (error) {
       console.log(error);
     }
