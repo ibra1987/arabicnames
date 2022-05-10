@@ -25,9 +25,9 @@ const SinglePost = ({ post }) => {
         </a>
       </Link>
       <Link href={`/blog/${slug.split(" ").join("-")}`}>
-        <h2 className="w-full text-left  text-pink-500 text-xl my-4 cursor-pointer hover:underline">
+        <a className="w-full text-left  text-pink-500 text-xl my-4 cursor-pointer hover:underline">
           {title}
-        </h2>
+        </a>
       </Link>
       <p className="w-full text-sm p-2 text-left text-gray-700 ">
         {excerpt}...
