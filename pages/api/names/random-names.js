@@ -2,11 +2,26 @@ import RandomName from "../../../models/RandomName";
 import connection from "../../../database/DBConnect";
 
 const handler = async (req, res) => {
-  const frontendKey = process.env.FRONTEND_KEY;
+  const defaultNames = [
+    {
+      _id: "61cf89527315e1586e0c037b",
+      Name: "Assia",
+      Meaning: "confort person or sad meditating",
+    },
+    {
+      _id: "61ce357390bd324aca2226e1",
+      Name: "Arij",
+      Meaning: "Good fragrant scent.",
+    },
 
-  const { token } = req.body;
+    {
+      __id: "61cf8b547315e1586e0c0387",
+      Name: "Bacha'ir",
+      Meaning: "means the beginnings",
+    },
+  ];
 
-  if (req.method !== "POST" || !token || token !== frontendKey) {
+  if (req.method !== "GET") {
     return res.redirect(307, "/");
   }
 
@@ -14,7 +29,7 @@ const handler = async (req, res) => {
   const randomNames = await RandomName.find();
 
   if (!randomNames) {
-    return res.status(404).json({ error: "not found" });
+    return res.status(200).json(defaultNames);
   }
   return res.status(200).json(randomNames);
 };
