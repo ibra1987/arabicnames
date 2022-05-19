@@ -1,4 +1,3 @@
-import { getDisplayName } from "next/dist/shared/lib/utils";
 import { useState } from "react";
 import SearchInput from "../components/Home/SearchInput";
 import connection from "../database/DBConnect";

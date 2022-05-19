@@ -6,7 +6,6 @@ import LeaderBoard from "../components/ads/LeaderBoard";
 import { contentful } from "../utils/contentful/config";
 import RandomName from "../models/RandomName";
 import connection from "../database/DBConnect";
-import Layout from "../layouts/Default";
 
 const Home = ({ posts, randomNames }) => {
   return (
