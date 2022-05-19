@@ -2,10 +2,12 @@ import { useState } from "react";
 import SearchInput from "../components/Home/SearchInput";
 import connection from "../database/DBConnect";
 import Name from "../models/Name";
+import { useRouter } from "next/router";
 
 const FullNamesList = ({ names }) => {
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(JSON.parse(names));
+  const router = useRouter();
   const inputStyle =
     "w-3/5 border-2 border-pink-200 outline-none bg-white focus:border-pink-400 p-2 text-gray-700";
   const displayedNames = !filter
@@ -36,6 +38,7 @@ const FullNamesList = ({ names }) => {
     setfilter(e.target.value);
   };
 
+  if (router.isFallback) return <div>Loading ...</div>;
   return (
     <section className="w-full md:w-11/12 flex flex-col justify-start items-center p-2 mt-10 ">
       <div className="w-full text-center">

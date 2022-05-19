@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import SearchInput from "../../components/Home/SearchInput";
 import Skeleton from "../../components/Shared/Skeleton";
@@ -5,8 +6,10 @@ import connection from "../../database/DBConnect";
 import Name from "../../models/Name";
 
 const FullNamesList = ({ names }) => {
+  const router = useRouter();
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(names);
+  if (router.isFallback) return <div>Loading ....</div>;
   if (!names) return <Skeleton redirect={true} />;
 
   const inputStyle =
