@@ -1,6 +1,5 @@
 import RandomName from "./RandomName";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const RandomNames = ({ randomNames }) => {
   const [names, setNames] = useState(randomNames);
@@ -12,8 +11,8 @@ const RandomNames = ({ randomNames }) => {
   return (
     <section className="w-11/12 md:w-full p-2  flex flex-col justify-start items-center ">
       <div className="w-full  gap-2 grid grid-cols-1 sm:grid-cols-3">
-        {randomNames &&
-          randomNames.map((name) => <RandomName name={name} key={name._id} />)}
+        {names &&
+          names.map((name) => <RandomName name={name} key={name._id} />)}
       </div>
     </section>
   );

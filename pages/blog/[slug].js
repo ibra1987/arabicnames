@@ -117,6 +117,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const slug = params.slug.split("-").join(" ");
+
   try {
     const response = await getSingleBySlug(slug, "blog");
 
