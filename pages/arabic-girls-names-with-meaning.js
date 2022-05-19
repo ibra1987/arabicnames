@@ -76,6 +76,7 @@ const FullNamesList = ({ names }) => {
   );
 };
 
+FullNamesList.layout = "defaultLayout";
 export default FullNamesList;
 
 export async function getStaticProps() {

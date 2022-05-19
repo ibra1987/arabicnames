@@ -99,7 +99,7 @@ const Slug = ({ post }) => {
     </section>
   );
 };
-
+Slug.layout = "defaultLayout";
 export default Slug;
 
 export async function getStaticPaths() {

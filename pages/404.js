@@ -32,4 +32,5 @@ const NotFound = () => {
   );
 };
 
+NotFound.layout = "defaultLayout";
 export default NotFound;

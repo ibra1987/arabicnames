@@ -46,6 +46,7 @@ const Index = ({ posts }) => {
   );
 };
 
+Index.layout = "defaultLayout";
 export default Index;
 
 export async function getServerSideProps() {

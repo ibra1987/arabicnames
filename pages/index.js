@@ -6,7 +6,7 @@ import LeaderBoard from "../components/ads/LeaderBoard";
 import { contentful } from "../utils/contentful/config";
 import RandomName from "../models/RandomName";
 import connection from "../database/DBConnect";
-import axios from "axios";
+import Layout from "../layouts/Default";
 
 const Home = ({ posts, randomNames }) => {
   return (
@@ -31,6 +31,7 @@ const Home = ({ posts, randomNames }) => {
     </section>
   );
 };
+Home.layout = "defaultLayout";
 export default Home;
 
 export async function getServerSideProps() {
