@@ -1,4 +1,3 @@
-import React from "react";
 import getAll from "../../utils/contentful/getAll";
 import SinglePost from "../../components/Home/SinglePost";
 import SearchInput from "../../components/Home/SearchInput";
