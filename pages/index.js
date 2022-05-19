@@ -50,7 +50,7 @@ export async function getServerSideProps() {
     },
 
     {
-      __id: "61cf8b547315e1586e0c0387",
+      _id: "61cf8b547315e1586e0c0387",
       Name: "Bacha'ir",
       Meaning: "means the beginnings",
     },
