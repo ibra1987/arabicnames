@@ -58,7 +58,7 @@ const Slug = ({ post }) => {
                 return (
                   <p
                     data-id={body.content.indexOf(node)}
-                    className="indent-2 leading-10  my-4 text-lg text-gray-600"
+                    className="indent-2 leading-10 popins  my-4 text-lg text-gray-600"
                   >
                     {children}
                   </p>

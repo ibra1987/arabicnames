@@ -20,8 +20,10 @@ const NotFound = () => {
     };
   });
   return (
-    <section className="w-full flex flex-col justify-center items-center py-8 popins">
-      <h2>Oops! We could not find the requested page :(</h2>
+    <section className="w-full flex flex-col justify-center text-lg items-center py-8 popins">
+      <h2 className="text-gray-700 tracking-wider ">
+        Oops! We could not find the requested page :(
+      </h2>
       <div>
         We {"couldn't"} find the requested page. Redirecting to&nbsp;
         <Link href="/">
