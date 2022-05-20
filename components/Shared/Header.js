@@ -4,12 +4,14 @@ import NavBar from "./NavBar";
 
 const Header = () => {
   return (
-    <header className="w-full h-60 bg-gray-600 p-2  shadow-md flex flex-col justify-start items-center ">
+    <header className="w-full h-60 bg-gray-600 pt-6 md:pt-2 shadow-md flex flex-col justify-start items-center ">
       <div className="w-full flex justify-between items-start border-b border-gray-500 ">
         <Logo />
         <NavBar />
       </div>
-      <LeaderBoard />
+      <div className="md:flex justify-center items-center w-full hidden">
+        <LeaderBoard />
+      </div>
     </header>
   );
 };
