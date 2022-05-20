@@ -8,9 +8,12 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import moment from "moment";
 import SideBar from "../../components/Shared/SideBar";
 import Skeleton from "../../components/Shared/Skeleton";
+import { useRouter } from "next/router";
 
 const Slug = ({ post }) => {
+  const router = useRouter();
   if (!post) return <Skeleton />;
+  if (router.isFallback) return <div>Loading ....</div>;
 
   const { featuredImage, title, tags, body } = post?.fields;
 

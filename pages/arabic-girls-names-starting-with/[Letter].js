@@ -10,7 +10,7 @@ const FullNamesList = ({ names }) => {
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(names);
   if (router.isFallback) return <div>Loading ....</div>;
-  if (!names) return <Skeleton redirect={true} />;
+  if (!names) router.push("/arabic-girls-names-with-meaning");
 
   const inputStyle =
     "w-3/5 border-2 border-pink-200 outline-none bg-white focus:border-pink-400 p-2 text-gray-700";

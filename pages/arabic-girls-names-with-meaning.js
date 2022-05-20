@@ -30,8 +30,9 @@ const FullNamesList = ({ names }) => {
           }
           return 0;
         })
-        .filter((name) =>
-          name["Name"].toLowerCase().includes(filter.toLowerCase())
+        .filter(
+          (name) =>
+            name["Name"].toLowerCase().charAt(0) === filter.toLowerCase()
         );
 
   const handleOnChange = (e) => {
