@@ -1,7 +1,19 @@
-const SideBar = () => {
+const SideBar = ({ suggestedPosts }) => {
   return (
-    <aside className="w-11/12 md:w-3/12 my-4 border flex felx-col justify-start items-center bg-white">
-      sidebar
+    <aside className="w-full my-4 border flex felx-col justify-start items-center bg-white">
+      <div className="w-full flex flex-col justify-start items-center border shadow-md rounded-md">
+        <h3 className="w-full p-2 text-white tracking-widest text-center bg-pink-400">
+          Read More
+        </h3>
+        {suggestedPosts?.length > 0 &&
+          suggestedPosts.map((post) => (
+            <div className="w-full p-2 " key={post.sys.id}>
+              <h2 className="text-gray-700 hover:underline text-lg w-full ">
+                {post.fields.title}
+              </h2>
+            </div>
+          ))}
+      </div>
     </aside>
   );
 };

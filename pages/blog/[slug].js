@@ -7,10 +7,14 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import moment from "moment";
 import SideBar from "../../components/Shared/SideBar";
+import Engagement from "../../components/blog/Engagement";
 import Skeleton from "../../components/Shared/Skeleton";
 import { useRouter } from "next/router";
+import getRandom from "../../utils/helpers/getRandom";
+import Head from "next/head";
+import DisqusComments from "../api/blog/comments/DisqusComments";
 
-const Slug = ({ post }) => {
+const Slug = ({ post, suggestedPosts }) => {
   const router = useRouter();
   if (!post) return <Skeleton />;
   if (router.isFallback) return <div>Loading ....</div>;
@@ -18,9 +22,11 @@ const Slug = ({ post }) => {
   const { featuredImage, title, tags, body } = post?.fields;
 
   return (
-    <section className="w-full  p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start bg-gray-100 lato ">
-      <div className="bg-white rounded-md my-4 w-1/12">Shares</div>
-      <div className="w-10/12 md:w-7/12 p-4 flex flex-col justify-start items-center my-4 bg-white border rounded-md ">
+    <section className="w-full my-4   p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start bg-gray-100 lato ">
+      <div className="border sticks mt-40 shadow-md rounded-md  w-11/12 md:w-1/12">
+        <Engagement />
+      </div>
+      <div className="  w-11/12 md:w-7/12 p-4 flex flex-col  shadow-md  justify-start items-center my-4 bg-white border rounded-md ">
         <h1 className="text-5xl text-pink-500 py-4 font-extrabold ">{title}</h1>
         <Image
           src={"https:" + featuredImage.fields.file.url}
@@ -67,24 +73,20 @@ const Slug = ({ post }) => {
                   </p>
                 );
               },
-              /*[INLINES.HYPERLINK]:(node, children)=>{
-
+              [INLINES.HYPERLINK]: (node, children) => {
                 return (
-                    <Link>
-                    <a>
-
-                    </a>
-                    </Link>
-                )
-              }*/
+                  <Link>
+                    <a></a>
+                  </Link>
+                );
+              },
             },
           })}{" "}
         </div>
         <hr className="w-full text-gray-200 h-0.5 bg-gray-200 " />
-
         <div className="w-full flex justify-start items-center my-6">
           <span className="text-pink-500 ">Tags: </span>
-          <div className="grid grid-flow-col gap-1">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
             {tags.split(", ").map((tag, index) => {
               return (
                 <span
@@ -97,8 +99,11 @@ const Slug = ({ post }) => {
             })}
           </div>
         </div>
+        <DisqusComments post={post} />
       </div>
-      <SideBar />
+      <div className="sticks w-11/12 md:w-3/12">
+        <SideBar suggestedPosts={suggestedPosts} />
+      </div>
     </section>
   );
 };
@@ -123,10 +128,13 @@ export async function getStaticProps({ params }) {
 
   try {
     const response = await getSingleBySlug(slug, "blog");
+    const suggestions = await getAll("blog");
+    const items = getRandom(suggestions.items, 2);
 
     return {
       props: {
         post: response.items[0],
+        suggestedPosts: items,
         revalidate: 10,
       },
     };

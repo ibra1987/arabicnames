@@ -36,3 +36,9 @@ a {
   transform: scale(1.05);
   transition: ease-in-out 0.2s;
 }
+
+.sticks {
+  position: sticky;
+  top: 0;
+  left: 0;
+}

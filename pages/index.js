@@ -14,13 +14,13 @@ const Home = ({ posts, randomNames }) => {
       <LeaderBoard />
 
       <>
-        <h3 className="w-full text-center mt-10  tracking-widest text-3xl py-4 font-bold popins  text-gray-700">
+        <h3 className="w-full text-center mt-10  tracking-widest text-3xl py-4 font-boldpopins  text-gray-700">
           Random Names
         </h3>
         <RandomNames randomNames={randomNames} />
       </>
 
-      <h3 className="w-full text-center tracking-widest text-3xl py-4 font-bold popins  text-gray-700">
+      <h3 className="w-full text-center tracking-widest text-3xl py-4 font-boldpopins  text-gray-700">
         Latest Blog Posts
       </h3>
 
