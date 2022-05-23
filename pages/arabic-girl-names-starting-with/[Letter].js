@@ -4,6 +4,7 @@ import SearchInput from "../../components/Home/SearchInput";
 import Skeleton from "../../components/Shared/Skeleton";
 import connection from "../../database/DBConnect";
 import Name from "../../models/Name";
+import Head from "next/head";
 
 const FullNamesList = ({ names, letter }) => {
   const router = useRouter();
