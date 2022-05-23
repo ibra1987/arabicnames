@@ -80,13 +80,13 @@ const Slug = ({ post, suggestedPosts }) => {
                   </p>
                 );
               },
-              [INLINES.HYPERLINK]: (node, children) => {
-                return (
-                  <Link>
-                    <a></a>
-                  </Link>
-                );
-              },
+              // [INLINES.HYPERLINK]: (node, children) => {
+              //   return (
+              //     <Link>
+              //       <a></a>
+              //     </Link>
+              //   );
+              // },
             },
           })}{" "}
         </div>
