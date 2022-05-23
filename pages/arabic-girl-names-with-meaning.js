@@ -1,13 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchInput from "../components/Home/SearchInput";
 import connection from "../database/DBConnect";
 import Name from "../models/Name";
 import { useRouter } from "next/router";
-
+import { FiHeart } from "react-icons/fi";
 const FullNamesList = ({ names }) => {
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(JSON.parse(names));
   const router = useRouter();
+  const { search } = router.query;
+
+  useEffect(() => {
+    if (search) {
+      setfilter(search);
+    }
+  }, [router]);
+
   const inputStyle =
     "w-3/5 border-2 border-pink-200 outline-none bg-white focus:border-pink-400 p-2 text-gray-700";
   const displayedNames = !filter
@@ -32,7 +40,8 @@ const FullNamesList = ({ names }) => {
         })
         .filter(
           (name) =>
-            name["Name"].toLowerCase().charAt(0) === filter.toLowerCase()
+            name["Name"].toLowerCase().charAt(0) === filter.toLowerCase() ||
+            name["Meaning"].includes(filter.toLowerCase())
         );
 
   const handleOnChange = (e) => {
@@ -58,7 +67,10 @@ const FullNamesList = ({ names }) => {
           displayedNames.map((name, index) => (
             <div className="w-full md:4/5 text-center" key={name._id}>
               <div className="w-full bg-gray-50 border-b flex justify-start items-start p-2">
-                <h2 className=" w-1/4 text-left">{name.Name}</h2>
+                <div className="w-1/4 flex justify-start items-center">
+                  <FiHeart className="mr-2 text-pink-400" />
+                  <h2> {name.Name}</h2>
+                </div>
                 <span className="w-1/3 md:w-2/4 text-left">{name.Meaning}</span>
                 <audio
                   controls

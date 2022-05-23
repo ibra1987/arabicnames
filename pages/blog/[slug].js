@@ -23,8 +23,15 @@ const Slug = ({ post, suggestedPosts }) => {
 
   return (
     <section className="w-full my-4   p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start bg-gray-100 lato ">
+      <Head>
+        <title>{post.fields.slug}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={post.fields.excerpt} />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="index, follow" />
+      </Head>
       <div className="border sticks mt-40 shadow-md rounded-md  w-11/12 md:w-1/12">
-        <Engagement />
+        <Engagement slug={post.fields.slug} />
       </div>
       <div className="  w-11/12 md:w-7/12 p-4 flex flex-col  shadow-md  justify-start items-center my-4 bg-white border rounded-md ">
         <h1 className="text-5xl text-pink-500 py-4 font-extrabold ">{title}</h1>
@@ -99,6 +106,8 @@ const Slug = ({ post, suggestedPosts }) => {
             })}
           </div>
         </div>
+        <hr className="w-full text-gray-200 h-0.5 bg-gray-200 " />
+
         <DisqusComments post={post} />
       </div>
       <div className="sticks w-11/12 md:w-3/12">

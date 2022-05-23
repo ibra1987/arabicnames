@@ -65,7 +65,7 @@ const NavBar = () => {
           </Link>
         </li>
         <li className={liClass} onClick={() => setShowMenu(false)}>
-          <Link href="/arabic-girls-names-with-meaning">
+          <Link href="/arabic-girl-names-with-meaning">
             <a
               className={
                 router.pathname === "/arabic-girls-names-with-meaning"

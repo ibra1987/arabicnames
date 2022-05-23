@@ -3,6 +3,7 @@ import SinglePost from "../../components/Home/SinglePost";
 import SearchInput from "../../components/Home/SearchInput";
 import { useState } from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import Head from "next/head";
 
 const Index = ({ posts }) => {
   const [postsList, setPostsList] = useState(posts);
@@ -26,6 +27,15 @@ const Index = ({ posts }) => {
     " focus:border-gray-600 text-gray-800 w-11/12 my-6  mx-2 p-2 outline-none border border-gray-400 rounded border-gray-200";
   return (
     <section className="w-full flex flex-col justify-start items-center   ">
+      <Head>
+        <title>Arabic girl names- blog</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="How to choose a perfect baby girl name four your princess"
+        />
+        <meta name="robots" content="index, follow" />
+      </Head>
       <SearchInput
         placeholder={"Search blog posts"}
         style={InputStyle}

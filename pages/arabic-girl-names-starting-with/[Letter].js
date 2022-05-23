@@ -5,7 +5,7 @@ import Skeleton from "../../components/Shared/Skeleton";
 import connection from "../../database/DBConnect";
 import Name from "../../models/Name";
 
-const FullNamesList = ({ names }) => {
+const FullNamesList = ({ names, letter }) => {
   const router = useRouter();
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(names);
@@ -27,6 +27,15 @@ const FullNamesList = ({ names }) => {
 
   return (
     <section className="w-full md:w-11/12 flex flex-col justify-start items-center p-2 mt-10 ">
+      <Head>
+        <title>{`Arabic girl names starting with ${letter}`}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content={`A list of arabic girl names starting with letter ${letter}`}
+        />
+        <meta name="robots" content="index, follow" />
+      </Head>
       <div className="w-full text-center">
         <SearchInput
           placeholder={"Quick Search"}
@@ -97,6 +106,7 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         names: [],
+        letter,
       },
     };
   }
