@@ -14,7 +14,7 @@ const FullNamesList = ({ names }) => {
     if (search) {
       setfilter(search);
     }
-  }, [router]);
+  }, [router, search]);
 
   const inputStyle =
     "w-3/5 border-2 border-pink-200 outline-none bg-white focus:border-pink-400 p-2 text-gray-700";
