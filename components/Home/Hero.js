@@ -40,7 +40,7 @@ const Hero = () => {
           clickHandler={handleSubmit}
         />
         <h3 className="tracking-wide text-gray font-bold">Or</h3>
-        <Link href="/arabic-girls-names-with-meaning">
+        <Link href="/arabic-girl-names-with-meaning">
           <a className=" w-11/12 md:w-2/5 ">
             <Button
               styles={ExploreButtonStyles}
