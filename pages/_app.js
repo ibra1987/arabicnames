@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
-      <ToastContainer />
+      <ToastContainer theme="colored" />
     </Layout>
   );
 }
