@@ -15,7 +15,7 @@ const Home = ({ posts, randomNames }) => {
   const { sub } = router.query;
 
   useEffect(() => {
-    if (sub && sub === 1) {
+    if (sub && sub === "1") {
       toast.success("Successfuly subscribed, Thank you!");
     }
   }, [router, sub]);
