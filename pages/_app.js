@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import defaultLayout from "../layouts/Default";
 import EmptyLayout from "../layouts/empty";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const layouts = {
   defaultLayout,
@@ -11,6 +13,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Component {...pageProps} />
+      <ToastContainer />
     </Layout>
   );
 }

@@ -6,8 +6,16 @@ import LeaderBoard from "../components/ads/LeaderBoard";
 import { contentful } from "../utils/contentful/config";
 import RandomName from "../models/RandomName";
 import connection from "../database/DBConnect";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 const Home = ({ posts, randomNames }) => {
+  const router = useRouter();
+  const { sub } = router.query;
+
+  if (sub && sub === 1) {
+    toast.success("Successfuly subscribed, Thank you!");
+  }
   return (
     <section className="w-full relative flex flex-col justify-start items-center">
       <Hero />
