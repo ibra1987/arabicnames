@@ -8,14 +8,17 @@ import RandomName from "../models/RandomName";
 import connection from "../database/DBConnect";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Home = ({ posts, randomNames }) => {
   const router = useRouter();
   const { sub } = router.query;
 
-  if (sub && sub === 1) {
-    toast.success("Successfuly subscribed, Thank you!");
-  }
+  useEffect(() => {
+    if (sub && sub === 1) {
+      toast.success("Successfuly subscribed, Thank you!");
+    }
+  }, [router, sub]);
   return (
     <section className="w-full relative flex flex-col justify-start items-center">
       <Hero />
