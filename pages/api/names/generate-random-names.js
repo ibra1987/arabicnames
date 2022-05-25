@@ -13,11 +13,11 @@ async function handler(req, res) {
     origin: "*",
   });
 
-  const { token } = req.body;
-  if (!token) return res.redirect(307, "/");
-  const SECRET = process.env.RANDOM_NAMES_SECRET;
+  // const { token } = req.body;
+  // if (!token) return res.redirect(307, "/");
+  // const SECRET = process.env.RANDOM_NAMES_SECRET;
 
-  if (token !== SECRET) return res.redirect(307, "/");
+  // if (token !== SECRET) return res.redirect(307, "/");
 
   await connection();
   try {
