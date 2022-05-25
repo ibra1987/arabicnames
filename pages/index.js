@@ -23,6 +23,22 @@ const Home = ({ posts, randomNames }) => {
   return (
     <section className="w-full relative flex flex-col justify-start items-center">
       <Head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-WLZYHVJXJ9"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
         <title>Find An Arabic Girl Name Four Your Baby Girl</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
