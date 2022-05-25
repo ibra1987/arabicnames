@@ -18,9 +18,16 @@ const Subscribe = () => {
           id="MERGEO"
           className="outline-none py-3 text-gray-700 p-2 my-4 w-11/12 md:w-1/2 rounded-md"
         />
-        <input type="hidden" name="id" value="104a983e16"></input>
-        <input type="hidden" name="u" value="3b909ecbd5a9f5022da5026e0"></input>
+
         <Button type="submit" text={"Subscribe"} styles={styles} />
+        <input
+          type="hidden"
+          name="ht"
+          value="2c5c7bc39160baccfad0b9f3e90fded4a207f3a1:MTY1MzQzOTIzNy40OTY3"
+        ></input>
+        <input type="hidden" name="mc_signupsource" value="hosted">
+          {" "}
+        </input>
       </form>
     </section>
   );

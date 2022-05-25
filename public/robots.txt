@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://arabicgirlnames.com
+
+# Sitemaps
+Sitemap: https://arabicgirlnames.com/sitemap.xml
