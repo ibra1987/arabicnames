@@ -4,7 +4,7 @@ import Name from "../../../models/Name";
 import NextCors from "nextjs-cors";
 
 async function handler(req, res) {
-  if (req.method !== "POST") {
+  if (req.method !== "GET") {
     return res.redirect(307, "/");
   }
   await await NextCors(req, res, {
