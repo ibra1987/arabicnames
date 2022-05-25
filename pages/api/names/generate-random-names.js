@@ -24,12 +24,11 @@ async function handler(req, res) {
     await RandomName.deleteMany({});
 
     const names = await Name.aggregate([{ $sample: { size: 3 } }]);
+    await RandomName.insertMany(names);
 
-    const inserted = await RandomName.insertMany(names);
-
-    res.json(inserted);
+    res.status(200);
   } catch (error) {
-    res.json(error.message);
+    res.status(500);
   }
 }
 
