@@ -10,7 +10,6 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
-import NextCors from "nextjs-cors";
 
 const Home = ({ posts, randomNames }) => {
   const router = useRouter();
@@ -60,12 +59,6 @@ Home.layout = "defaultLayout";
 export default Home;
 
 export async function getServerSideProps() {
-  await await NextCors(req, res, {
-    // Options
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-    origin: "*",
-  });
-
   const { items } = await contentful.getEntries({
     content_type: "blog",
   });

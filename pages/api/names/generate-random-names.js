@@ -9,7 +9,7 @@ async function handler(req, res) {
   }
   await await NextCors(req, res, {
     // Options
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+    methods: ["GET"],
     origin: "*",
   });
 
