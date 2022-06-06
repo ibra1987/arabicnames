@@ -17,7 +17,7 @@ const RandomName = ({ name }) => {
       </div>
       <div className="flex justify-start w-full items-start">
         <h2 className="mx-2 text-white font-bold text-sm tracking-wider  ">
-          Pronounciation:
+          Pronunciation:
         </h2>
         <audio
           controls

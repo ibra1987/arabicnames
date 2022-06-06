@@ -12,6 +12,9 @@ const Subscribe = () => {
         className="w-full md:w-1/2 my-6 text-center"
         action="https://arabicgirlnames.us14.list-manage.com/subscribe/post"
       >
+        <input type="hidden" name="u" value="3b909ecbd5a9f5022da5026e0" />
+        <input type="hidden" name="id" value="104a983e16" />
+        <input type="hidden" name="orig-lang" value="1" />
         <input
           placeholder="your email"
           name="MERGE0"
@@ -19,11 +22,6 @@ const Subscribe = () => {
           className="outline-none py-3 text-gray-700 p-2 my-4 w-11/12 md:w-1/2 rounded-md"
         />
         <Button type="submit" text={"Subscribe"} styles={styles} />
-        <input
-          type="hidden"
-          name="ht"
-          value="2c5c7bc39160baccfad0b9f3e90fded4a207f3a1:MTY1MzQzOTIzNy40OTY3"
-        />
         <input type="hidden" name="mc_signupsource" value="hosted" />{" "}
       </form>
     </section>

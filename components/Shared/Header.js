@@ -9,9 +9,7 @@ const Header = () => {
         <Logo />
         <NavBar />
       </div>
-      <div className="md:flex justify-center items-center w-full hidden">
-        <LeaderBoard />
-      </div>
+      <div className="md:flex justify-center items-center w-full hidden"></div>
     </header>
   );
 };

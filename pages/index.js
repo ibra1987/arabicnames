@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
+import Script from "next/script";
 
 const Home = ({ posts, randomNames }) => {
   const router = useRouter();
@@ -23,10 +24,10 @@ const Home = ({ posts, randomNames }) => {
   return (
     <section className="w-full relative flex flex-col justify-start items-center">
       <Head>
-        <script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-WLZYHVJXJ9"
-        ></script>
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -52,7 +53,6 @@ const Home = ({ posts, randomNames }) => {
         />
       </Head>
       <Hero />
-      <LeaderBoard />
 
       <>
         <h3 className="w-full text-center mt-10  tracking-widest text-3xl py-4 font-boldpopins  text-gray-700">

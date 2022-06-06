@@ -4,6 +4,7 @@ import connection from "../database/DBConnect";
 import Name from "../models/Name";
 import { useRouter } from "next/router";
 import { FiHeart } from "react-icons/fi";
+import Head from "next/head";
 const FullNamesList = ({ names }) => {
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(JSON.parse(names));
@@ -51,6 +52,16 @@ const FullNamesList = ({ names }) => {
   if (router.isFallback) return <div>Loading ...</div>;
   return (
     <section className="w-full md:w-11/12 flex flex-col justify-start items-center p-2 mt-10 ">
+      <Head>
+        <title>Arabic girl names with meaning</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Full list of arabic girls names with their meaning"
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="index, follow" />
+      </Head>
       <div className="w-full text-center">
         <SearchInput
           placeholder={"Quick Search"}
@@ -82,7 +93,7 @@ const FullNamesList = ({ names }) => {
                 </audio>
               </div>
               {index % 10 === 0 && index !== 0 && (
-                <div className="w-4/5 mx-auto  bg-pink-100 h-48 my-10">add</div>
+                <div className="w-4/5 mx-auto hidden my-10"></div>
               )}
             </div>
           ))}
