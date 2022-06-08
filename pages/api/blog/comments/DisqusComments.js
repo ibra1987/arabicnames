@@ -2,7 +2,7 @@ import { DiscussionEmbed } from "disqus-react";
 const DisqusComments = ({ post }) => {
   const disqusShortname = "arabicnames";
   const disqusConfig = {
-    url: "http://localhost:3001/" + post.fields.slg,
+    url: "http://localhost:3000/" + post.fields.slg,
     identifier: post.sys.id, // Single post id
     title: post.fields.title, // Single post title
   };

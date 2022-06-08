@@ -54,10 +54,9 @@ const Slug = ({ post, suggestedPosts }) => {
           </div>
           <div className=" ">
             | <span className="text-pink-500 font-bold"> Image Source :</span>{" "}
-            <a>
-              {" "}
-              <Link href="https://pixabay.com">pixabay.com</Link>
-            </a>
+            <Link href="https://pixabay.com">
+              <a>pixabay.com</a>
+            </Link>
           </div>
         </div>
         <div>
@@ -80,13 +79,15 @@ const Slug = ({ post, suggestedPosts }) => {
                   </p>
                 );
               },
-              // [INLINES.HYPERLINK]: (node, children) => {
-              //   return (
-              //     <Link>
-              //       <a></a>
-              //     </Link>
-              //   );
-              // },
+              [INLINES.HYPERLINK]: (node, children) => {
+                return (
+                  <Link href={node.data.uri}>
+                    <a className="text-blue-500" rel="nofollow">
+                      {children}
+                    </a>
+                  </Link>
+                );
+              },
             },
           })}{" "}
         </div>

@@ -7,8 +7,8 @@ import { SiYoutube } from "react-icons/si";
 
 const PrivacyPolicy = () => {
   return (
-    <section className="w-full flex justify-center items-start ">
-      <div className="w-3/5 p-2">
+    <section className="w-full flex flex-col md:flex-row justify-start items-center md:justify-center md:items-start ">
+      <div className="w-11/12 md:w-3/5 p-2">
         <h1 className="w-full p-2 text-center text-lg tracking-widest bg-pink-500 my-6 text-white">
           Privacy Policy
         </h1>
@@ -210,7 +210,7 @@ const PrivacyPolicy = () => {
           records.
         </p>
       </div>
-      <div className="w-2/5 p-2 flex flex-col justify-start items-start">
+      <div className="w-11/12 md:w-2/5 p-2 flex flex-col justify-start items-start">
         <h2 className="w-full p-2 text-center text-lg tracking-widest bg-pink-500 my-6 text-white">
           Contact us
         </h2>
