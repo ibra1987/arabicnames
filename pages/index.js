@@ -2,7 +2,6 @@ import Hero from "../components/Home/Hero";
 import LatestPosts from "../components/Home/LatestPosts";
 import Subscribe from "../components/Home/Subscribe";
 import RandomNames from "../components/Home/RandomNames";
-//import LeaderBoard from "../components/ads/LeaderBoard";
 import { contentful } from "../utils/contentful/config";
 import RandomName from "../models/RandomName";
 import connection from "../database/DBConnect";
