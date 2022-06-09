@@ -33,7 +33,7 @@ const FullNamesList = ({ names, letter }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
-          content={`A list of arabic girl names starting with letter ${letter}`}
+          content={`A list of unique arabic girl names starting with letter ${letter.toUpperCase()}`}
         />
         <meta name="robots" content="index, follow" />
       </Head>
