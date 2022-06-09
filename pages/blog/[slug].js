@@ -25,9 +25,13 @@ const Slug = ({ post, suggestedPosts }) => {
     <section className="w-full my-4   p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start bg-gray-100 lato ">
       <Head>
         <title>{post.fields.slug}</title>
+        <meta charset="UTF-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={post.fields.excerpt} />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="keywords"
+          content={"baby girl," + post.fields.slug.split("-").join(",")}
+        />
         <meta name="robots" content="index, follow" />
       </Head>
       <div className="border sticks mt-40 shadow-md rounded-md  w-11/12 md:w-1/12">
