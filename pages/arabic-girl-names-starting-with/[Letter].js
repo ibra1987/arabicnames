@@ -19,7 +19,7 @@ const FullNamesList = ({ names, letter }) => {
     ? namesList
     : namesList
         .filter((name) =>
-          name["Name"].toLocaleLowerCase().includes(filter.toLocaleLowerCase())
+          name["Name"].toLowerCase().includes(filter.toLowerCase())
         )
         .sort((a, b) => a["Name"] - b["Name"]);
   const handleOnChange = (e) => {
@@ -33,7 +33,7 @@ const FullNamesList = ({ names, letter }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
-          content={`A list of unique arabic girl names starting with letter ${letter.toUpperCase()}`}
+          content={`A list of unique arabic girl names starting with letter ${letter?.toUpperCase()}`}
         />
         <meta name="robots" content="index, follow" />
       </Head>
