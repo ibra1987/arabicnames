@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
-import Script from "next/script";
 
 const Home = ({ posts, randomNames }) => {
   const router = useRouter();
@@ -23,7 +22,7 @@ const Home = ({ posts, randomNames }) => {
   return (
     <section className="w-full relative flex flex-col justify-start items-center">
       <Head>
-        <Script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-WLZYHVJXJ9"
         />
