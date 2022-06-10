@@ -77,12 +77,13 @@ const Slug = ({ post, suggestedPosts }) => {
                 return (
                   <p
                     data-id={body.content.indexOf(node)}
-                    className="indent-2 leading-10 popins  my-4 text-lg text-gray-600"
+                    className="indent-2 leading-8 popins  my-4 text-lg text-gray-600"
                   >
                     {children}
                   </p>
                 );
               },
+
               [INLINES.HYPERLINK]: (node, children) => {
                 return (
                   <Link href={node.data.uri}>
@@ -92,8 +93,17 @@ const Slug = ({ post, suggestedPosts }) => {
                   </Link>
                 );
               },
+              [BLOCKS.EMBEDDED_ASSET]: (node, children) => {
+                return (
+                  <Image
+                    src={"https:" + node.data.target.fields.file.url}
+                    width={node.data.target.fields.file.details.image.width}
+                    height={node.data.target.fields.file.details.image.height}
+                  />
+                );
+              },
             },
-          })}{" "}
+          })}
         </div>
         <hr className="w-full text-gray-200 h-0.5 bg-gray-200 " />
         <div className="w-full flex justify-start items-center my-6">
