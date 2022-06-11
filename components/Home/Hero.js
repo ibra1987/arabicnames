@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className=" py-10 w-11/12 md:w-4/5 flex  -mt-24  shadow-lg rounded-md bg-gray-200  border-b flex-col justify-center  items-center ">
+    <section className=" py-10 w-full flex mt-8   shadow-lg rounded-md border-b flex-col justify-center  items-center ">
       <h2 className="tracking-widest text-xl md:text-2xl  lg:text-3xl text-gray-600  text-center font-extrabold">
         Find An Arabic Name For Your Baby Girl
       </h2>

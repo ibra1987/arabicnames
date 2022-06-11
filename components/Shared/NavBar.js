@@ -43,8 +43,8 @@ const NavBar = () => {
             <a
               className={
                 router.pathname === "/"
-                  ? "border-b border-gray-500 px-2 py-1  tracking-wider  text-white transition duration-750 ease-in"
-                  : "  text-white  px-2 py-1 pb-2transition border-b border-gray-600 duration-750 ease-in  hover:border-b hover:border-gray-500  "
+                  ? "border-b border-gray-300 px-2 py-1  tracking-wider  text-gray-700 transition duration-750 ease-in"
+                  : "  text-gray-700  px-2 py-1 pb-2 transition border-b border-white duration-750 ease-in  hover:border-b hover:border-gray-300  "
               }
             >
               Home
@@ -56,8 +56,8 @@ const NavBar = () => {
             <a
               className={
                 router.pathname.includes("/blog")
-                  ? "border-b border-gray-500 px-2 py-1  tracking-wider  text-white transition duration-750 ease-in"
-                  : "  text-white  px-2 py-1 pb-2transition border-b border-gray-600 duration-750 ease-in  hover:border-b hover:border-gray-500 "
+                  ? "border-b border-gray-300 px-2 py-1  tracking-wider  text-gray-700 transition duration-750 ease-in"
+                  : "  text-gray-700  px-2 py-1 pb-2transition border-b border-white duration-750 ease-in  hover:border-b hover:border-gray-300 "
               }
             >
               Blog
@@ -69,8 +69,8 @@ const NavBar = () => {
             <a
               className={
                 router.pathname === "/arabic-girls-names-with-meaning"
-                  ? "border-b border-gray-500 px-2 py-1  tracking-wider  text-white transition duration-750 ease-in"
-                  : "  text-white  px-2 py-1 pb-2transition border-b border-gray-600 duration-750 ease-in  hover:border-b hover:border-gray-500 "
+                  ? "border-b border-gray-300 px-2 py-1  tracking-wider  text-gray-700 transition duration-750 ease-in"
+                  : "  text-gray-700  px-2 py-1 pb-2transition border-b border-white duration-750 ease-in  hover:border-b hover:border-gray-300 "
               }
             >
               Full List

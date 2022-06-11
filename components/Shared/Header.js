@@ -4,8 +4,8 @@ import NavBar from "./NavBar";
 
 const Header = () => {
   return (
-    <header className="w-full h-60 bg-gray-600 pt-6 md:pt-2 shadow-md flex flex-col justify-start items-center ">
-      <div className="w-full flex justify-between items-start border-b border-gray-500 ">
+    <header className="w-full  pt-6 md:pt-2 shadow-md flex flex-col justify-start items-center ">
+      <div className="w-full flex justify-between items-start  ">
         <Logo />
         <NavBar />
       </div>

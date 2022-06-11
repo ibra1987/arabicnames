@@ -22,7 +22,7 @@ const Slug = ({ post, suggestedPosts }) => {
   const { featuredImage, title, tags, body } = post?.fields;
 
   return (
-    <section className="w-full my-4   p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start bg-gray-100 lato ">
+    <section className="w-full my-4   p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start  lato ">
       <Head>
         <title>{post.fields.slug}</title>
         <meta charset="UTF-8" />
