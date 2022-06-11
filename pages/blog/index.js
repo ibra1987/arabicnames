@@ -4,6 +4,7 @@ import SearchInput from "../../components/Home/SearchInput";
 import { useState } from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import Head from "next/head";
+import SideBar from "../../components/Shared/SideBar";
 
 const Index = ({ posts }) => {
   const [postsList, setPostsList] = useState(posts);
@@ -42,13 +43,10 @@ const Index = ({ posts }) => {
         changeHandler={handleOnChange}
       />
       <div className=" w-11/12  p-2  md:flex lg:flex-row lg:justify-center lg:items-start  md:flex-col-reverse md:justify-start md:items-center ">
-        <div className="lg:w-2/3  grid grid-cols-1 md:grid-cols-3 gap-2 ">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2 ">
           {displayedPosts.map((post) => (
             <SinglePost post={post} key={post.sys.id} />
           ))}
-        </div>
-        <div className="md:flex md:flex-col  md:justify-start md:items-center  md:w-full lg:w-1/3  hidden rounded-md">
-          sidebqr
         </div>
       </div>
     </section>

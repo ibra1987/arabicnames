@@ -30,6 +30,11 @@ const FullNamesList = ({ names }) => {
         return 0;
       })
     : namesList
+        .filter(
+          (name) =>
+            name.Name.toLowerCase().includes(filter.toLowerCase()) ||
+            name.Meaning.includes(filter.toLowerCase())
+        )
         .sort((a, b) => {
           if (a.Name.toLowerCase() < b.Name.toLowerCase()) {
             return -1;
@@ -38,13 +43,7 @@ const FullNamesList = ({ names }) => {
             return 1;
           }
           return 0;
-        })
-        .filter(
-          (name) =>
-            name["Name"].toLowerCase().charAt(0) === filter.toLowerCase() ||
-            name["Meaning"].includes(filter.toLowerCase())
-        );
-
+        });
   const handleOnChange = (e) => {
     setfilter(e.target.value);
   };

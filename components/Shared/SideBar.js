@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const SideBar = ({ suggestedPosts }) => {
   return (
-    <aside className="w-full my-4 border flex felx-col justify-start items-center bg-white">
+    <aside className="w-full  border flex felx-col justify-start items-center bg-white">
       <div className="w-full flex flex-col justify-start items-center border shadow-md rounded-md">
         <h3 className="w-full p-2 text-white tracking-widest text-center bg-pink-400">
           Read More

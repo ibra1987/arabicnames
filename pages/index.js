@@ -13,6 +13,8 @@ import Head from "next/head";
 const Home = ({ posts, randomNames }) => {
   const router = useRouter();
   const { sub } = router.query;
+  const sectionHeadings =
+    "w-full text-left   mt-8  tracking-widest text-3xl font-boldpopins  text-pink-500 font-extrabold";
 
   useEffect(() => {
     if (sub && sub === "1") {
@@ -53,15 +55,11 @@ const Home = ({ posts, randomNames }) => {
       <Hero />
 
       <>
-        <h3 className="w-full text-left underline mt-10  tracking-widest text-3xl font-boldpopins  text-gray-700">
-          Random Names
-        </h3>
+        <h3 className={sectionHeadings}>Today's Choice</h3>
         <RandomNames randomNames={randomNames} />
       </>
 
-      <h3 className="w-full text-left underline tracking-widest text-3xl font-boldpopins  text-gray-700">
-        Latest Blog Posts
-      </h3>
+      <h3 className={sectionHeadings}>Latest Blog Posts</h3>
 
       <LatestPosts posts={posts} />
 
