@@ -19,7 +19,7 @@ const Index = ({ posts }) => {
         const inBody = documentToHtmlString(post.fields.body)
           .toLowerCase()
           .includes(search.toLowerCase());
-        if (!inTitle) return inBody;
+        return inTitle ? inTitle : inBody;
       });
   const handleOnChange = (e) => {
     setSearch(e.target.value);

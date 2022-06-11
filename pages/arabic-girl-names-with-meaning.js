@@ -18,7 +18,7 @@ const FullNamesList = ({ names }) => {
   }, [router, search]);
 
   const inputStyle =
-    "w-3/5 border-2 border-pink-200 outline-none bg-white focus:border-pink-400 p-2 text-gray-700";
+    "w-full border-2 border-pink-200 outline-none bg-white focus:border-pink-400 p-2 text-gray-700";
   const displayedNames = !filter
     ? namesList.sort((a, b) => {
         if (a.Name.toLowerCase() < b.Name.toLowerCase()) {
@@ -56,14 +56,19 @@ const FullNamesList = ({ names }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
-          content="Full list of arabic girls names with their meaning"
+          content="Full list of arabic girl names with their meaning. Find the perfect girl name for your baby. Explore the list and search names by alphabet or meaning.."
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="robots" content="index, follow" />
       </Head>
+      <div>
+        <h1 className="p-2 w-full text-pink-500 text-lg font-extrabold ">
+          Full Arabic Girl Names List With Their Meanings
+        </h1>
+      </div>
       <div className="w-full text-center">
         <SearchInput
-          placeholder={"Quick Search"}
+          placeholder={"Quick Search By Alphabet or Meaning"}
           style={inputStyle}
           value={filter}
           changeHandler={handleOnChange}
@@ -71,11 +76,16 @@ const FullNamesList = ({ names }) => {
       </div>
       <div className="w-full my-8 flex flex-col justify-start items-center text-sm md:text-lg">
         {!displayedNames.length && (
-          <div className="w-full  text-red-600 p-4 text-center">No results</div>
+          <div className="w-full h-screen  text-gray-600 p-4 text-center">
+            No results :(
+          </div>
         )}
         {displayedNames &&
           displayedNames.map((name, index) => (
-            <div className="w-full md:4/5 text-center" key={name._id}>
+            <div
+              className="w-full md:4/5 text-center transition duration-150 ease-in-out"
+              key={name._id}
+            >
               <div className="w-full bg-gray-50 border-b flex justify-start items-start p-2">
                 <div className="w-1/4 flex justify-start items-center">
                   <FiHeart className="mr-2 text-pink-400" />

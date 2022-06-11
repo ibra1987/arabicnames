@@ -8,7 +8,7 @@ const Logo = () => {
           Arabic female Names
         </span>
         <span className="popins text-gray-500 text-xs ">
-          Arabic female names for your princess and more...
+          Arabic girl names for your princess and more...
         </span>
       </div>
     </Link>
