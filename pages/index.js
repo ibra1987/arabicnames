@@ -1,4 +1,5 @@
 import Hero from "../components/Home/Hero";
+import CardAd from "../components/ads//CardAd";
 import LatestPosts from "../components/Home/LatestPosts";
 import Subscribe from "../components/Home/Subscribe";
 import RandomNames from "../components/Home/RandomNames";
@@ -65,6 +66,7 @@ const Home = ({ posts, randomNames }) => {
       <h3 className={sectionHeadings}>Latest Blog Posts</h3>
 
       <LatestPosts posts={posts} />
+      <CardAd />
 
       <Subscribe />
     </section>
