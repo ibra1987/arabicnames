@@ -25,7 +25,7 @@ const Slug = ({ post, suggestedPosts }) => {
     <section className="w-full my-4   p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start  lato ">
       <Head>
         <title>{post.fields.slug}</title>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content={post.fields.excerpt} />
         <meta
@@ -68,7 +68,7 @@ const Slug = ({ post, suggestedPosts }) => {
             renderNode: {
               [BLOCKS.HEADING_2]: (node, children) => {
                 return (
-                  <h2 className="text-pink-500 font-bold  my-4 text-xl">
+                  <h2 className="text-pink-500 font-bold tracking-wider my-4 text-2xl roboto">
                     {children}
                   </h2>
                 );

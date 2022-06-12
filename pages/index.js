@@ -48,6 +48,8 @@ const Home = ({ posts, randomNames }) => {
           content="choose an arabic girl name four your baby girl. You can browse our full list of beautiful and cute girl names with their meanings."
         />
         <meta name="robots" content="index, follow" />
+        <meta name="yandex-verification" content="ec1127e59313a78a" />
+
         <meta
           name="google-site-verification"
           content="Ch9-qg1xL6F6DTvV4WTOyFT5qDPMArEoUoOkJvhCJzs"

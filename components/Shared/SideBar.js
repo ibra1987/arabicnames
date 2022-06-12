@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const SideBar = ({ suggestedPosts }) => {
   return (
@@ -10,6 +11,15 @@ const SideBar = ({ suggestedPosts }) => {
         {suggestedPosts?.length > 0 &&
           suggestedPosts.map((post) => (
             <div className="w-full p-2 " key={post.sys.id}>
+              <Image
+                src={"https:" + post.fields.featuredImage.fields.file.url}
+                width={
+                  post.fields.featuredImage.fields.file.details.image.width
+                }
+                height={
+                  post.fields.featuredImage.fields.file.details.image.height
+                }
+              />
               <h2 className="text-gray-700 hover:underline text-lg w-full ">
                 <Link href={"/blog/" + post.fields.slug.split(" ").join("-")}>
                   {post.fields.title}

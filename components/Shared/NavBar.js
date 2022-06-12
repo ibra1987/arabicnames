@@ -14,7 +14,11 @@ const NavBar = () => {
     " hidden flex-row md:flex duration-700     ease-in-out transition-all w-2/3  transition-all   duration-700 ease-in-out text-sm md:text-lg justify-end items-center px-2  ";
   const ulClassDisplay =
     "w-2/3  flex-row md:flex transition-all  duration-700 ease-in-out text-sm md:text-lg justify-end items-center px-2 ";
-  const liClass = "mx-2 my-2";
+  const liClass = "my-2 mx-1 w-24 text-center py-2 ";
+  const linkClass =
+    " block w-full  py-1   tracking-widest  text-gray-600 hover:text-white rounded hover:bg-pink-500 transition duration-750 ease-in";
+  const activeLinkClass =
+    "    block w-full py-1 transition tracking-widest  bg-pink-500 text-white duration-750 ease-in rounded  ";
   //const { isLoading, loadingActions } = useContext(LoadingContext);
 
   useEffect(() => {
@@ -41,11 +45,7 @@ const NavBar = () => {
         <li className={liClass} onClick={() => setShowMenu(false)}>
           <Link href="/">
             <a
-              className={
-                router.pathname === "/"
-                  ? "border-b border-gray-300 px-2 py-1  tracking-wider  text-gray-700 transition duration-750 ease-in"
-                  : "  text-gray-700  px-2 py-1 pb-2 transition border-b border-white duration-750 ease-in  hover:border-b hover:border-gray-300  "
-              }
+              className={router.pathname === "/" ? activeLinkClass : linkClass}
             >
               Home
             </a>
@@ -55,9 +55,7 @@ const NavBar = () => {
           <Link href="/blog">
             <a
               className={
-                router.pathname.includes("/blog")
-                  ? "border-b border-gray-300 px-2 py-1  tracking-wider  text-gray-700 transition duration-750 ease-in"
-                  : "  text-gray-700  px-2 py-1 pb-2transition border-b border-white duration-750 ease-in  hover:border-b hover:border-gray-300 "
+                router.pathname.includes("/blog") ? activeLinkClass : linkClass
               }
             >
               Blog
@@ -68,9 +66,9 @@ const NavBar = () => {
           <Link href="/arabic-girl-names-with-meaning">
             <a
               className={
-                router.pathname === "/arabic-girls-names-with-meaning"
-                  ? "border-b border-gray-300 px-2 py-1  tracking-wider  text-gray-700 transition duration-750 ease-in"
-                  : "  text-gray-700  px-2 py-1 pb-2transition border-b border-white duration-750 ease-in  hover:border-b hover:border-gray-300 "
+                router.pathname === "/arabic-girl-names-with-meaning"
+                  ? activeLinkClass
+                  : linkClass
               }
             >
               Full List
