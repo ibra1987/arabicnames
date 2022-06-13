@@ -3,6 +3,7 @@ import defaultLayout from "../layouts/Default";
 import EmptyLayout from "../layouts/empty";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Script from "next/script";
 
 const layouts = {
   defaultLayout,
