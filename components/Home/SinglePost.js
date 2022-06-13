@@ -13,7 +13,7 @@ const SinglePost = ({ post }) => {
       ref={lazyRoot}
     >
       <Link href={`/blog/${slug.split(" ").join("-")}`}>
-        <a className="block h-1/2">
+        <a className=" ">
           <Image
             src={"https:" + featuredImage.fields.file.url}
             width={featuredImage.fields.file.details.image.width}

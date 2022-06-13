@@ -73,6 +73,14 @@ const Slug = ({ post, suggestedPosts }) => {
                   </h2>
                 );
               },
+              [BLOCKS.HEADING_3]: (node, children) => {
+                return (
+                  <h6 className="bg-gray-200 p-4 my-1 rounded w-full text-gray-500 roboto">
+                    {children}
+                    <br />
+                  </h6>
+                );
+              },
               [BLOCKS.PARAGRAPH]: (node, children) => {
                 return (
                   <p
@@ -104,8 +112,10 @@ const Slug = ({ post, suggestedPosts }) => {
               },
               [BLOCKS.UL_LIST]: (node, children) => {
                 return (
-                  <ul className="list-disc p-6 bg-gray-200 rounded ">
-                    <li className="italic mx-6 text-gray-600">{children}</li>
+                  <ul className="list-disc p-4 bg-gray-200 rounded ">
+                    <li className="italic mx-2 text-gray-500 my-2 roboto">
+                      {children}
+                    </li>
                   </ul>
                 );
               },
