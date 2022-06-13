@@ -22,7 +22,7 @@ const Slug = ({ post, suggestedPosts }) => {
   const { featuredImage, title, tags, body } = post?.fields;
 
   return (
-    <section className="w-full my-4   p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start  lato ">
+    <section className="w-full my-4 text-gray-600  p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start  lato ">
       <Head>
         <title>{post.fields.slug}</title>
         <meta charSet="UTF-8" />
@@ -56,12 +56,12 @@ const Slug = ({ post, suggestedPosts }) => {
             | <span className="text-pink-500 font-bold"> Author :</span> Content
             team
           </div>
-          <div className=" ">
+          {/* <div className=" ">
             | <span className="text-pink-500 font-bold"> Image Source :</span>{" "}
             <Link href="https://pixabay.com">
               <a>pixabay.com</a>
             </Link>
-          </div>
+          </div> */}
         </div>
         <div>
           {documentToReactComponents(body, {
@@ -77,7 +77,7 @@ const Slug = ({ post, suggestedPosts }) => {
                 return (
                   <p
                     data-id={body.content.indexOf(node)}
-                    className="indent-2 leading-8 popins  my-4 text-lg text-gray-600"
+                    className="indent-2 leading-8 popins  my-4 text-lg"
                   >
                     {children}
                   </p>
@@ -100,6 +100,13 @@ const Slug = ({ post, suggestedPosts }) => {
                     width={node.data.target.fields.file.details.image.width}
                     height={node.data.target.fields.file.details.image.height}
                   />
+                );
+              },
+              [BLOCKS.UL_LIST]: (node, children) => {
+                return (
+                  <ul className="list-disc p-6 bg-gray-200 rounded ">
+                    <li className="italic mx-6 text-gray-600">{children}</li>
+                  </ul>
                 );
               },
             },

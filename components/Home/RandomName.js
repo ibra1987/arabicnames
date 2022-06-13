@@ -2,7 +2,7 @@ import React from "react";
 
 const RandomName = ({ name }) => {
   return (
-    <div className="border p-4 flex flex-col justify-around items-start shadow-md rounded-md popins">
+    <div className="border px-2 py-4 flex flex-col justify-around items-start shadow-md rounded-md popins">
       <div className="flex justify-start w-full items-start">
         <h2 className="mx-2 text-gray-700 font-bold text-sm tracking-wider">
           Name:
@@ -16,7 +16,7 @@ const RandomName = ({ name }) => {
         <span className="text-pink-500">{name?.Meaning}</span>
       </div>
       <div className="flex justify-start w-full items-start">
-        <h2 className="mx-2 text-gray-700 font-bold text-sm tracking-wider  ">
+        <h2 className="mx-1 text-gray-700 font-bold text-sm tracking-wider   ">
           Pronunciation:
         </h2>
         <audio

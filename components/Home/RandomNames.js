@@ -10,7 +10,7 @@ const RandomNames = ({ randomNames }) => {
 
   return (
     <section className="w-11/12 border-b md:w-full p-2 mb-6 pb-6  flex flex-col justify-start items-center ">
-      <div className="w-full  gap-2 grid grid-cols-1 sm:grid-cols-3">
+      <div className="w-full  gap-1 grid grid-cols-1 sm:grid-cols-3">
         {names &&
           names.map((name) => <RandomName name={name} key={name._id} />)}
       </div>

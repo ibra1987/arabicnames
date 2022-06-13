@@ -13,7 +13,7 @@ const SinglePost = ({ post }) => {
       ref={lazyRoot}
     >
       <Link href={`/blog/${slug.split(" ").join("-")}`}>
-        <a>
+        <a className="block h-1/2">
           <Image
             src={"https:" + featuredImage.fields.file.url}
             width={featuredImage.fields.file.details.image.width}
@@ -30,7 +30,7 @@ const SinglePost = ({ post }) => {
         </a>
       </Link>
       <p className="w-full text-sm p-2 text-left text-gray-700 ">
-        {excerpt}...
+        {excerpt.slice(0, 100)}...
         <Link href={`/blog/${slug.split(" ").join("-")}`}>
           <a className=" underline text-pink-600">Continue reading</a>
         </Link>
