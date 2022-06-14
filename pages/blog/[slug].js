@@ -130,6 +130,7 @@ const Slug = ({ post, suggestedPosts }) => {
             },
           })}
         </div>
+
         <hr className="w-full text-gray-200 h-0.5 bg-gray-200 " />
         <div className="w-full flex justify-start items-center my-6">
           <span className="text-pink-500 ">Tags: </span>
@@ -146,11 +147,22 @@ const Slug = ({ post, suggestedPosts }) => {
             })}
           </div>
         </div>
+        <div className="w-full my-4 bg-yellow-500 flex justify-center items-center">
+          <Link href="https://afflat3e1.com/lnk.asp?o=12229&c=918277&a=236088&k=FF1069C66B6CE4C44B43CA2261B42464&l=12508&s1=agnsidebar">
+            <Image
+              src={"/images/ads/baby-free-stuf.gif"}
+              width={728}
+              height={90}
+              className="cursor-pointer"
+              alt="Baby-free-stuff"
+            />
+          </Link>
+        </div>
         <hr className="w-full text-gray-200 h-0.5 bg-gray-200 " />
 
         <DisqusComments post={post} />
       </div>
-      <div className="sticks w-11/12 md:w-3/12">
+      <div className="sticks h-screen w-11/12 md:w-3/12">
         <SideBar suggestedPosts={suggestedPosts} />
       </div>
     </section>

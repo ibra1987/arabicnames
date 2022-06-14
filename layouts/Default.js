@@ -1,6 +1,5 @@
 import Footer from "../components/Shared/Footer";
 import Header from "../components/Shared/Header";
-import Script from "next/script";
 
 export default function Layout({ children }) {
   return (
