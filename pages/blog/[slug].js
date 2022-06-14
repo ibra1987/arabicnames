@@ -116,6 +116,14 @@ const Slug = ({ post, suggestedPosts }) => {
                     <li className="italic mx-2 text-gray-500 my-2 roboto">
                       {children}
                     </li>
+                    <Link href="https://ae2c87objsiz9t2re1w9ndpvr2.hop.clickbank.net/?tid=agn">
+                      <Image
+                        src={"/images/ads/reading4.jpg"}
+                        width={728}
+                        height={90}
+                        alt="children learning program"
+                      />
+                    </Link>
                   </ul>
                 );
               },
