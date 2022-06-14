@@ -45,6 +45,10 @@ const Home = ({ posts, randomNames }) => {
         <title>Find An Arabic Girl Name Four Your Baby Girl</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
+          name="p:domain_verify"
+          content="ae5a7bf0a3cabb35838668d30397f6f7"
+        />
+        <meta
           name="description"
           content="choose an arabic girl name four your baby girl. You can browse our full list of beautiful and cute girl names with their meanings."
         />
