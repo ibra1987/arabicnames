@@ -26,9 +26,9 @@ async function handler(req, res) {
     const names = await Name.aggregate([{ $sample: { size: 3 } }]);
     await RandomName.insertMany(names);
 
-    res.status(200);
+    res.status(200).json({ ok: "ok" });
   } catch (error) {
-    res.status(500);
+    res.status(500).json({ error: error.message });
   }
 }
 
