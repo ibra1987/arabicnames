@@ -1,15 +1,14 @@
-import { FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaPinterest } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import Link from "next/link";
 const Engagement = ({ slug }) => {
   return (
     <div className=" w-full flex md:flex-col justify-around md:justify-start items-center">
-      <h3 className="w-full my-4 p-2 text-center text-gray-700">Share</h3>
       <div>
         <IconContext.Provider
           value={{
             className:
-              "text-gray-400 border border-gray-400 p-2 my-6  text-5xl rounded-full hover:text-blue-400 hover:border-blue-400 cursor-pointer",
+              "text-blue-600 border border-blue-600 p-2 my-6  text-5xl rounded-full hover:text-blue-700 hover:border-blue-700 cursor-pointer",
           }}
         >
           <Link
@@ -24,7 +23,7 @@ const Engagement = ({ slug }) => {
       <IconContext.Provider
         value={{
           className:
-            "text-gray-400 border border-gray-400 my-6 p-2  text-5xl rounded-full hover:text-blue-400 hover:border-blue-400 cursor-pointer",
+            "text-blue-400 border border-blue-400 my-6 p-2  text-5xl rounded-full hover:text-blue-500 hover:border-blue-500 cursor-pointer",
         }}
       >
         <Link
@@ -32,6 +31,18 @@ const Engagement = ({ slug }) => {
         >
           <a target="_blank">
             <FaTwitter />
+          </a>
+        </Link>
+      </IconContext.Provider>
+      <IconContext.Provider
+        value={{
+          className:
+            "text-red-600 border  border-red-600 my-6 p-2 flex flex-col justify-start items-center  text-5xl rounded-full hover:text-red-700 hover:border-red-700 cursor-pointer",
+        }}
+      >
+        <Link href={`https://www.pinterest.com/pin/create/button/`}>
+          <a target="_blank">
+            <FaPinterest />
           </a>
         </Link>
       </IconContext.Provider>

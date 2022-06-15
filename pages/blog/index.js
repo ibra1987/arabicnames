@@ -5,7 +5,8 @@ import { useState } from "react";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import Head from "next/head";
 import SideBar from "../../components/Shared/SideBar";
-
+import Link from "next/link";
+import Image from "next/image";
 const Index = ({ posts }) => {
   const [postsList, setPostsList] = useState(posts);
   const [search, setSearch] = useState("");
@@ -42,12 +43,34 @@ const Index = ({ posts }) => {
         style={InputStyle}
         changeHandler={handleOnChange}
       />
+      <div className="w-full my-4  flex justify-center items-center">
+        <Link href="https://afflat3e1.com/lnk.asp?o=12229&c=918277&a=236088&k=FF1069C66B6CE4C44B43CA2261B42464&l=12508&s1=agnsidebar">
+          <Image
+            src={"/images/ads/baby-free-stuf.gif"}
+            width={728}
+            height={90}
+            className="cursor-pointer"
+            alt="Baby-free-stuff"
+          />
+        </Link>
+      </div>
       <div className=" w-11/12  p-2  md:flex lg:flex-row lg:justify-center lg:items-start  md:flex-col-reverse md:justify-start md:items-center ">
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2 ">
           {displayedPosts.map((post) => (
             <SinglePost post={post} key={post.sys.id} />
           ))}
         </div>
+      </div>
+      <div className="w-full my-4  flex justify-center items-center">
+        <Link href="https://afflat3e1.com/lnk.asp?o=12229&c=918277&a=236088&k=FF1069C66B6CE4C44B43CA2261B42464&l=12508&s1=agnsidebar">
+          <Image
+            src={"/images/ads/baby-free-stuf.gif"}
+            width={728}
+            height={90}
+            className="cursor-pointer"
+            alt="Baby-free-stuff"
+          />
+        </Link>
       </div>
     </section>
   );

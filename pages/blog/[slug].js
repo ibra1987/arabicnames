@@ -38,7 +38,9 @@ const Slug = ({ post, suggestedPosts }) => {
         <Engagement slug={post.fields.slug} />
       </div>
       <div className="  w-11/12 md:w-7/12 p-4 flex flex-col  shadow-md  justify-start items-center my-4 bg-white border rounded-md ">
-        <h1 className="text-5xl text-pink-500 py-4 font-extrabold ">{title}</h1>
+        <h1 className="text-2xl md:text-3xl  lg:text-4xl text-pink-500 py-4 font-extrabold ">
+          {title}
+        </h1>
         <Image
           src={"https:" + featuredImage.fields.file.url}
           width={featuredImage.fields.file.details.image.width}
@@ -81,6 +83,7 @@ const Slug = ({ post, suggestedPosts }) => {
                   </h6>
                 );
               },
+
               [BLOCKS.PARAGRAPH]: (node, children) => {
                 return (
                   <p

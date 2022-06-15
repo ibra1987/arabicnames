@@ -16,7 +16,7 @@ const Home = ({ posts, randomNames }) => {
   const router = useRouter();
   const { sub } = router.query;
   const sectionHeadings =
-    "w-full text-left   mt-8  tracking-widest text-3xl font-boldpopins  text-pink-500 font-extrabold";
+    "w-full text-center  mt-8  tracking-widest text-3xl font-boldpopins  text-pink-500 font-extrabold";
 
   useEffect(() => {
     if (sub && sub === "1") {
