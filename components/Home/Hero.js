@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="mb-4 py-10 w-full flex mt-8 bg-pink-400  shadow-lg rounded-md border-b flex-col justify-center  items-center ">
+    <section className="mb-4 py-10 w-full flex mt-4 bg-pink-400  shadow-lg rounded-md border-b flex-col justify-center  items-center ">
       <h2 className="tracking-widest text-xl md:text-2xl  lg:text-3xl text-white  text-center font-extrabold">
         Find The Perfect Arabic Girl Name
       </h2>
