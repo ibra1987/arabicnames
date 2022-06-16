@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Head from "next/head";
 import Script from "next/script";
+import LeaderBoard from "../components/ads/LeaderBoard";
 
 const Home = ({ posts, randomNames }) => {
   const router = useRouter();
@@ -42,7 +43,7 @@ const Home = ({ posts, randomNames }) => {
           `,
           }}
         />
-        <title>Find An Arabic Girl Name Four Your Baby Girl</title>
+        <title>Find The perfect Arabic Girl Name</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="p:domain_verify"
@@ -50,7 +51,7 @@ const Home = ({ posts, randomNames }) => {
         />
         <meta
           name="description"
-          content="choose an arabic girl name four your baby girl. You can browse our full list of beautiful and cute girl names with their meanings."
+          content="choose an arabic girl name four your baby. You can browse our full list of beautiful and cute girl names with their meanings."
         />
         <meta name="robots" content="index, follow" />
         <meta name="yandex-verification" content="ec1127e59313a78a" />
@@ -60,7 +61,7 @@ const Home = ({ posts, randomNames }) => {
           content="Ch9-qg1xL6F6DTvV4WTOyFT5qDPMArEoUoOkJvhCJzs"
         />
       </Head>
-      <CardAd />
+      <LeaderBoard />
       <Hero />
 
       <>

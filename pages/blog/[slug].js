@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef } from "react";
 import getAll from "../../utils/contentful/getAll";
 import getSingleBySlug from "../../utils/contentful/getSingleBySlug";
 import Link from "next/link";
@@ -13,8 +13,10 @@ import { useRouter } from "next/router";
 import getRandom from "../../utils/helpers/getRandom";
 import Head from "next/head";
 import DisqusComments from "../api/blog/comments/DisqusComments";
+import LeaderBoard from "../../components/ads/LeaderBoard";
 
 const Slug = ({ post, suggestedPosts }) => {
+  const lazyRoot = useRef(null);
   const router = useRouter();
   if (!post) return <Skeleton />;
   if (router.isFallback) return <div>Loading ....</div>;
@@ -47,6 +49,7 @@ const Slug = ({ post, suggestedPosts }) => {
           height={featuredImage.fields.file.details.image.height}
           className=" cursor-pointer rounded-md"
           alt="baby-girl-image"
+          lazyRoot={lazyRoot}
         />
         <div className=" my-2 w-full grid grid-cols-3 gap-1 text-xs">
           <div className="">
@@ -110,24 +113,15 @@ const Slug = ({ post, suggestedPosts }) => {
                     src={"https:" + node.data.target.fields.file.url}
                     width={node.data.target.fields.file.details.image.width}
                     height={node.data.target.fields.file.details.image.height}
+                    lazyRoot={lazyRoot}
                   />
                 );
               },
-              [BLOCKS.UL_LIST]: (node, children) => {
+              [BLOCKS.LIST_ITEM]: (node, children) => {
                 return (
-                  <ul className="list-disc p-4 bg-gray-200 rounded ">
-                    <li className="italic mx-2 text-gray-500 my-2 roboto">
-                      {children}
-                    </li>
-                    <Link href="https://ae2c87objsiz9t2re1w9ndpvr2.hop.clickbank.net/?tid=agn">
-                      <Image
-                        src={"/images/ads/reading4.jpg"}
-                        width={728}
-                        height={90}
-                        alt="children learning program"
-                      />
-                    </Link>
-                  </ul>
+                  <li className="italic mx-2 text-gray-500 my-2 roboto">
+                    {children}
+                  </li>
                 );
               },
             },
@@ -158,10 +152,12 @@ const Slug = ({ post, suggestedPosts }) => {
               height={90}
               className="cursor-pointer"
               alt="Baby-free-stuff"
+              lazyRoot={lazyRoot}
             />
           </Link>
         </div>
         <hr className="w-full text-gray-200 h-0.5 bg-gray-200 " />
+        <LeaderBoard />
 
         <DisqusComments post={post} />
       </div>

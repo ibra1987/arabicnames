@@ -1,8 +1,10 @@
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 const CardAd = () => {
   const lazyRoot = useRef(null);
+
   return (
     <div
       className="p-2 my-4 shadow-md flex flex-col justify-start items-center  rounded-md border "
