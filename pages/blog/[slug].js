@@ -88,7 +88,7 @@ const Slug = ({ post, suggestedPosts }) => {
                 return (
                   <p
                     data-id={body.content.indexOf(node)}
-                    className="indent-2 leading-8 popins  my-4 text-lg"
+                    className="indent-2 leading-8 popins  my-4 text-sm md:text-md lg:text-lg"
                   >
                     {children}
                   </p>

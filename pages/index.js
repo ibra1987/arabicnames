@@ -16,7 +16,7 @@ const Home = ({ posts, randomNames }) => {
   const router = useRouter();
   const { sub } = router.query;
   const sectionHeadings =
-    "w-full text-center  mt-8  tracking-widest text-3xl font-boldpopins  text-pink-500 font-extrabold";
+    "w-full text-center  my-4  tracking-widest text-3xl font-bold lato  text-gray-500 font-extrabold";
 
   useEffect(() => {
     if (sub && sub === "1") {
@@ -60,6 +60,7 @@ const Home = ({ posts, randomNames }) => {
           content="Ch9-qg1xL6F6DTvV4WTOyFT5qDPMArEoUoOkJvhCJzs"
         />
       </Head>
+      <CardAd />
       <Hero />
 
       <>
@@ -70,7 +71,6 @@ const Home = ({ posts, randomNames }) => {
       <h3 className={sectionHeadings}>Latest Blog Posts</h3>
 
       <LatestPosts posts={posts} />
-      <CardAd />
 
       <Subscribe />
     </section>
