@@ -115,7 +115,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       names: JSON.parse(JSON.stringify(names)),
-      letter,
+
       revalidate: 10,
     },
   };
