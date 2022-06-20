@@ -51,10 +51,7 @@ const FullNamesList = ({ names, letter }) => {
         )}
         {displayedNames &&
           displayedNames.map((name, index) => (
-            <div
-              className="w-full md:4/5 text-center border-b-2 border-red-500"
-              key={name._id}
-            >
+            <div className="w-full md:4/5 text-center" key={name._id}>
               <div className="w-full bg-gray-50 border-b flex justify-start items-start p-2">
                 <h2 className=" w-1/4">{name.Name}</h2>
                 <span className="w-1/3 md:w-2/4 text-left">{name.Meaning}</span>
