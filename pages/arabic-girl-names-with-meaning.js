@@ -103,7 +103,7 @@ const FullNamesList = ({ names }) => {
                 </audio>
               </div>
               {index % 15 === 0 && index !== 0 && (
-                <div className="w-11/12 my-6">
+                <div className="w-11/12 my-6 mx-auto">
                   <LeaderBoard />
                 </div>
               )}
