@@ -5,6 +5,7 @@ import Skeleton from "../../components/Shared/Skeleton";
 import connection from "../../database/DBConnect";
 import Name from "../../models/Name";
 import Head from "next/head";
+import LeaderBoard from "../../components/ads/LeaderBoard";
 
 const FullNamesList = ({ names, letter }) => {
   const router = useRouter();
@@ -64,9 +65,6 @@ const FullNamesList = ({ names, letter }) => {
                   <code>audio</code> element.
                 </audio>
               </div>
-              {index % 10 === 0 && index !== 0 && (
-                <div className="w-4/5 mx-auto  bg-pink-100 h-48 my-10">add</div>
-              )}
             </div>
           ))}
       </div>

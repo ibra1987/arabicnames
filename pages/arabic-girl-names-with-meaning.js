@@ -5,6 +5,7 @@ import Name from "../models/Name";
 import { useRouter } from "next/router";
 import { FiHeart } from "react-icons/fi";
 import Head from "next/head";
+import LeaderBoard from "../components/ads/LeaderBoard";
 const FullNamesList = ({ names }) => {
   const [filter, setfilter] = useState("");
   const [namesList, setNamesList] = useState(JSON.parse(names));
@@ -101,8 +102,10 @@ const FullNamesList = ({ names }) => {
                   <code>audio</code> element.
                 </audio>
               </div>
-              {index % 10 === 0 && index !== 0 && (
-                <div className="w-4/5 mx-auto hidden my-10"></div>
+              {index % 15 === 0 && index !== 0 && (
+                <div className="w-11/12 my-6">
+                  <LeaderBoard />
+                </div>
               )}
             </div>
           ))}
