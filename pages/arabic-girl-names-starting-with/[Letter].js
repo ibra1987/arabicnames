@@ -29,7 +29,7 @@ const FullNamesList = ({ names, letter }) => {
   return (
     <section className="w-full md:w-11/12 flex flex-col justify-start items-center p-2 mt-10 ">
       <Head>
-        <title>{`Arabic girl names starting with ${letter}`}</title>
+        <title>{`Arabic girl names starting with letter ${letter}`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
@@ -115,6 +115,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       names: JSON.parse(JSON.stringify(names)),
+      letter,
       revalidate: 10,
     },
   };
