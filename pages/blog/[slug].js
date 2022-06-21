@@ -90,12 +90,17 @@ const Slug = ({ post, suggestedPosts }) => {
 
                 [BLOCKS.PARAGRAPH]: (node, children) => {
                   return (
-                    <p
-                      data-id={body.content.indexOf(node)}
-                      className="indent-2 leading-8 popins  my-4 text-sm md:text-md lg:text-lg"
-                    >
-                      {children}
-                    </p>
+                    <>
+                      <p
+                        data-id={body.content.indexOf(node)}
+                        className="indent-2 leading-8 popins  my-4 text-sm md:text-md lg:text-lg"
+                      >
+                        {children}
+                      </p>
+                      {post.fields.slug ===
+                        "Newborn Baby Girl Gift Set Ideas" &&
+                        body.content.indexOf(node) === 5 && <LeaderBoard />}
+                    </>
                   );
                 },
 
