@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import { FiHeart } from "react-icons/fi";
+
 import { useState } from "react";
 import SearchInput from "../../components/Home/SearchInput";
 import Skeleton from "../../components/Shared/Skeleton";
@@ -6,6 +8,7 @@ import connection from "../../database/DBConnect";
 import Name from "../../models/Name";
 import Head from "next/head";
 import LeaderBoard from "../../components/ads/LeaderBoard";
+import Link from "next/link";
 
 const FullNamesList = ({ names, letter }) => {
   const router = useRouter();
@@ -58,7 +61,10 @@ const FullNamesList = ({ names, letter }) => {
             <>
               <div className="w-full md:4/5 text-center" key={name._id}>
                 <div className="w-full bg-gray-50 border-b flex justify-start items-start p-2">
-                  <h2 className=" w-1/4">{name.Name}</h2>
+                  <div className="w-1/4 flex justify-start items-center">
+                    <FiHeart className="mr-2 text-pink-400" />
+                    <h2> {name.Name}</h2>
+                  </div>
                   <span className="w-1/3 md:w-2/4 text-left">
                     {name.Meaning}
                   </span>
@@ -75,6 +81,19 @@ const FullNamesList = ({ names, letter }) => {
             </>
           ))}
       </div>
+      {letter && (
+        <div className="w-11/12 p-4 my-6 ">
+          <p className="indent-6 text-gray-900 w-4/5">
+            A full list of arabic girl names along with their meanings, and how
+            to pronounce them. Every day, fresh names are added to the list,
+            which is constantly updated. Please do not hesitate to{" "}
+            <Link href="/contact">
+              <a className="text-pink-500 underline">contact us</a>
+            </Link>{" "}
+            if you require more or personalized recommendations.It's free.
+          </p>
+        </div>
+      )}
     </section>
   );
 };
