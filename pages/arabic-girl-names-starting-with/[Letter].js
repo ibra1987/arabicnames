@@ -51,7 +51,7 @@ const FullNamesList = ({ names, letter }) => {
           <div className="w-full  text-red-600 p-4 text-center">No results</div>
         )}
         {letter && (
-          <div className="text-2xl p-4 mb-6 lato font-extrabold tracking-widest bg-gray-100 w-full  text-gray-600 text-center">{`Arabic girl names starting with the letter ${letter?.toUpperCase()}`}</div>
+          <h1 className="text-2xl p-4 mb-6 lato font-extrabold tracking-widest bg-gray-100 w-full  text-gray-600 text-center">{`Arabic girl names starting with the letter ${letter?.toUpperCase()}`}</h1>
         )}
         {displayedNames &&
           displayedNames.map((name, index) => (
