@@ -30,7 +30,7 @@ const FullNamesList = ({ names, letter }) => {
   return (
     <section className="w-full md:w-11/12 flex flex-col justify-start items-center p-2 mt-10 ">
       <Head>
-        <title>{`Arabic girl names starting with letter ${letter}`}</title>
+        <title>{`Arabic girl names starting with letter ${letter?.toUpperCase()}`}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
@@ -50,22 +50,29 @@ const FullNamesList = ({ names, letter }) => {
         {!displayedNames && (
           <div className="w-full  text-red-600 p-4 text-center">No results</div>
         )}
+        {letter && (
+          <div className="text-2xl p-4 mb-6 lato font-extrabold tracking-widest bg-gray-100 w-full  text-gray-600 text-center">{`Arabic girl names starting with the letter ${letter?.toUpperCase()}`}</div>
+        )}
         {displayedNames &&
           displayedNames.map((name, index) => (
-            <div className="w-full md:4/5 text-center" key={name._id}>
-              <div className="w-full bg-gray-50 border-b flex justify-start items-start p-2">
-                <h2 className=" w-1/4">{name.Name}</h2>
-                <span className="w-1/3 md:w-2/4 text-left">{name.Meaning}</span>
-                <audio
-                  controls
-                  className="w-2/4 md:w-1/5 h-4"
-                  src={`/audio/femaleNames/${name.Name}.mp3`}
-                >
-                  Your browser does not support the
-                  <code>audio</code> element.
-                </audio>
+            <>
+              <div className="w-full md:4/5 text-center" key={name._id}>
+                <div className="w-full bg-gray-50 border-b flex justify-start items-start p-2">
+                  <h2 className=" w-1/4">{name.Name}</h2>
+                  <span className="w-1/3 md:w-2/4 text-left">
+                    {name.Meaning}
+                  </span>
+                  <audio
+                    controls
+                    className="w-2/4 md:w-1/5 h-4"
+                    src={`/audio/femaleNames/${name.Name}.mp3`}
+                  >
+                    Your browser does not support the
+                    <code>audio</code> element.
+                  </audio>
+                </div>
               </div>
-            </div>
+            </>
           ))}
       </div>
     </section>
