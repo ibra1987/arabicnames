@@ -13,7 +13,7 @@ const NavBar = () => {
   const ulClassHidden =
     " hidden flex-row md:flex duration-700     ease-in-out transition-all w-2/3  transition-all   duration-700 ease-in-out text-sm md:text-lg justify-end items-center px-2  ";
   const ulClassDisplay =
-    "w-2/3  flex-row md:flex transition-all  duration-700 ease-in-out text-sm md:text-lg justify-end items-center px-2 ";
+    "w-2/3 flex-row md:flex transition-all  duration-700 ease-in-out text-sm md:text-lg justify-end items-center px-2 ";
   const liClass = "my-2 mx-1 w-24 text-center py-2 ";
   const linkClass =
     " block w-full  py-1   tracking-widest  text-gray-600 hover:text-white rounded hover:bg-pink-500 transition duration-750 ease-in";
@@ -30,7 +30,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="w-3/5 flex flex-col  md:flex-row justify-center md:justify-end items-end   ">
+    <nav className="w-3/5 mx-4 flex flex-col  md:flex-row justify-center md:justify-end items-end   ">
       <IconContext.Provider
         value={{ className: "text-gray-200 w-1/3 h-6 md:hidden" }}
       >
