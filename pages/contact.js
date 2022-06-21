@@ -5,6 +5,7 @@ import { RiTwitterFill } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 import { SiYoutube } from "react-icons/si";
 import { AiFillMessage } from "react-icons/ai";
+import Head from "next/head";
 
 const Contact = () => {
   const [localError, setlocalError] = useState("");

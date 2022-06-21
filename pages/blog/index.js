@@ -29,7 +29,7 @@ const Index = ({ posts }) => {
   return (
     <section className="w-full flex flex-col justify-start items-center   ">
       <Head>
-        <title>Arabic girl names- blog</title>
+        <title>Arabic girl names - blog</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
           name="description"
