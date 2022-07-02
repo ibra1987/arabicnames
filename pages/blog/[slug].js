@@ -36,7 +36,7 @@ const Slug = ({ post, suggestedPosts }) => {
         />
         <meta name="robots" content="index, follow" />
       </Head>
-      <section className="w-full my-4 text-gray-600  p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start  lato ">
+      <section className="w-full my-4 text-black p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start  lato ">
         <div className="border sticks mt-40 shadow-md rounded-md  w-11/12 md:w-1/12">
           <Engagement slug={post.fields.slug} />
         </div>
@@ -81,7 +81,7 @@ const Slug = ({ post, suggestedPosts }) => {
                 },
                 [BLOCKS.HEADING_3]: (node, children) => {
                   return (
-                    <h6 className="bg-gray-200 p-4 my-1 rounded w-full text-gray-500 roboto">
+                    <h6 className="bg-gray-200 p-4 my-1 rounded w-full text-gray-900 roboto">
                       {children}
                       <br />
                     </h6>
@@ -125,7 +125,7 @@ const Slug = ({ post, suggestedPosts }) => {
                 },
                 [BLOCKS.LIST_ITEM]: (node, children) => {
                   return (
-                    <li className="italic mx-2 text-gray-500 my-2 roboto">
+                    <li className="italic mx-2 text-gray-900 my-2 roboto">
                       {children}
                     </li>
                   );
