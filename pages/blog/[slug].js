@@ -12,7 +12,7 @@ import Skeleton from "../../components/Shared/Skeleton";
 import { useRouter } from "next/router";
 import getRandom from "../../utils/helpers/getRandom";
 import Head from "next/head";
-import DisqusComments from "../api/blog/comments/DisqusComments";
+//import DisqusComments from "../api/blog/comments/DisqusComments";
 import LeaderBoard from "../../components/ads/LeaderBoard";
 
 const Slug = ({ post, suggestedPosts }) => {
@@ -173,7 +173,7 @@ const Slug = ({ post, suggestedPosts }) => {
           <hr className="w-full text-gray-200 h-0.5 bg-gray-200 " />
           <LeaderBoard />
 
-          <DisqusComments post={post} />
+          {/* <DisqusComments post={post} /> */}
         </div>
         <div className="sticks h-screen w-11/12 md:w-3/12">
           <SideBar suggestedPosts={suggestedPosts} />
