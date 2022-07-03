@@ -4,6 +4,9 @@ import Link from "next/link";
 const Engagement = ({ slug }) => {
   return (
     <div className=" w-full flex md:flex-col justify-around md:justify-start items-center">
+      <span className="text-sm bg-cyan-700 text-center tracking-widest  font-bold text-white">
+        Spread The Word
+      </span>
       <div>
         <IconContext.Provider
           value={{
