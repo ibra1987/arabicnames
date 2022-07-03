@@ -15,7 +15,7 @@ const Engagement = ({ slug }) => {
           }}
         >
           <Link
-            href={`http://www.facebook.com/share.php?u=https://arabicgirlnames.com/blog/${slug}`}
+            href={`http://www.facebook.com/share.php?u=https://www.arabicgirlnames.com/blog/${slug}`}
           >
             <a target="_blank">
               <FaFacebookF />
@@ -30,7 +30,7 @@ const Engagement = ({ slug }) => {
         }}
       >
         <Link
-          href={`https://twitter.com/intent/tweet?url=https://arabicgirlnames.com/blog/${slug}`}
+          href={`https://twitter.com/intent/tweet?url=https://www.arabicgirlnames.com/blog/${slug}`}
         >
           <a target="_blank">
             <FaTwitter />
