@@ -44,7 +44,7 @@ const Index = ({ posts }) => {
       />
       <LeaderBoard />
 
-      <div className="w-full  mb-2 md:flex lg:flex-row lg:justify-center lg:items-start  md:flex-col-reverse md:justify-start md:items-center ">
+      <div className="w-full bg-gray-100 p-6  mb-2 md:flex lg:flex-row lg:justify-center lg:items-start  md:flex-col-reverse md:justify-start md:items-center ">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 ">
           {displayedPosts.map((post) => (
             <SinglePost post={post} key={post.sys.id} />

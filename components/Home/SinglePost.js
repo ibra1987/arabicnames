@@ -9,7 +9,7 @@ const SinglePost = ({ post }) => {
   const w = featuredImage.fields.file.details.image.height;
   return (
     <div
-      className="p-1   cursor-pointer scale bg-gray-50 mb-6  shadow-lg  text-gray-700  transition-colors ease-in-out duration-150  flex flex-col md:flex-row md:justify-center  justify-start md:items-center items-center   "
+      className="p-1 border  cursor-pointer scale bg-gray-50 mb-6  shadow-lg  text-gray-700  transition-colors ease-in-out duration-150  flex flex-col md:flex-row md:justify-center  justify-start md:items-center items-center   "
       ref={lazyRoot}
     >
       <Link href={`/blog/${slug.split(" ").join("-")}`}>
@@ -17,7 +17,7 @@ const SinglePost = ({ post }) => {
           <Image
             src={"https:" + featuredImage.fields.file.url}
             width={500}
-            height={300}
+            height={350}
             lazyRoot={lazyRoot}
             className=" cursor-pointer  "
             alt="baby image"

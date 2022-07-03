@@ -95,7 +95,7 @@ export default Home;
 export async function getServerSideProps() {
   const { items } = await contentful.getEntries({
     content_type: "blog",
-    limit: 6,
+    limit: 4,
   });
   const defaultNames = [
     {
