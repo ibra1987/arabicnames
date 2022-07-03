@@ -36,7 +36,7 @@ const Slug = ({ post, suggestedPosts }) => {
         />
         <meta name="robots" content="index, follow" />
       </Head>
-      <section className="w-full my-4 text-black p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start  lato ">
+      <section className="w-full md:w-4/5 my-4 text-black p-2 flex flex-col justify-start items-center md:flex-row md:justify-around  md:items-start  lato ">
         <div className="border sticks mt-40 shadow-md rounded-md  w-11/12 md:w-1/12">
           <Engagement slug={post.fields.slug} />
         </div>

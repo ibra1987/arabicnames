@@ -2,7 +2,7 @@ import React from "react";
 
 const RandomName = ({ name }) => {
   return (
-    <div className="border bg-white  px-2 py-4 flex flex-col justify-around items-start shadow-md rounded-md popins">
+    <div className="bg-white  px-2 py-4 flex flex-col justify-around items-start shadow-md rounded-md popins">
       <div className="flex justify-start w-full items-start">
         <h2 className="mx-2 text-gray-700 font-bold text-sm tracking-wider">
           Name:

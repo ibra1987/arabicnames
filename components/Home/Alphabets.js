@@ -25,17 +25,19 @@ const Alphabets = () => {
     "Z",
   ];
   return (
-    <div className="w-3/5 mx-auto gap-4 p-4 grid grid-cols-10 my-6 bg-gray-200">
-      {alphabets.map((letter, index) => (
-        <div
-          className="rounded-md w-10 h-10 flex justify-center items-center font-bold bg-pink-500 hover:bg-white hover:text-pink-500 hover:border hover:border-pink-500 transition-colors ease-out duration-300 cursor-pointer text-white"
-          key={index}
-        >
-          <Link href={`/arabic-girl-names-starting-with/${letter}`}>
-            <a>{letter}</a>
-          </Link>
-        </div>
-      ))}
+    <div className="w-full p-4 md:w-4/5 mx-auto flex justify-center items-center my-6 bg-gray-700 shadow-md border">
+      <div className="w-11/12 md:w-3/5 grid grid-cols-10 gap-2">
+        {alphabets.map((letter, index) => (
+          <div
+            className="rounded-md w-6  h-6 md:w-10 md:h-10  flex justify-center items-center font-bold bg-pink-500 hover:bg-white hover:text-pink-500 hover:border hover:border-pink-500 transition-colors ease-out duration-300 cursor-pointer text-white"
+            key={index}
+          >
+            <Link href={`/arabic-girl-names-starting-with/${letter}`}>
+              <a>{letter}</a>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

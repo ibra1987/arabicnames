@@ -9,27 +9,23 @@ const SinglePost = ({ post }) => {
 
   return (
     <div
-      className="p-1 border rounded-sm cursor-pointer scale bg-gray-50 mb-6  shadow-lg hover:bg-gray-700 text-gray-700 hover:text-gray-100 transition-colors ease-in-out duration-150  flex flex-col justify-start items-center   "
+      className="p-1   cursor-pointer scale bg-white  shadow-lg  text-gray-700  transition-colors ease-in-out duration-150  flex flex-col md:flex-row jusdtify-center md:justify-start items-center md:items-start  "
       ref={lazyRoot}
     >
       <Link href={`/blog/${slug.split(" ").join("-")}`}>
         <a className="">
           <Image
             src={"https:" + featuredImage.fields.file.url}
-            width={featuredImage.fields.file.details.image.width}
-            height={featuredImage.fields.file.details.image.height}
+            width={300}
+            height={200}
             lazyRoot={lazyRoot}
-            className=" cursor-pointer"
+            className=" cursor-pointer my-2  "
             alt="baby image"
           />
         </a>
       </Link>
-      <Link href={`/blog/${slug.split(" ").join("-")}`}>
-        <a className="w-full text-left p-2  text-pink-500 text-xl mb-4 cursor-pointer hover:underline">
-          {title}
-        </a>
-      </Link>
-      <p className="w-full text-sm p-2 px-2 text-left  ">
+
+      <p className="w-full text-sm  px-2 text-left  ">
         <Link href={`/blog/${slug.split(" ").join("-")}`}>
           <a> {excerpt.slice(0, 100)}...</a>
         </Link>

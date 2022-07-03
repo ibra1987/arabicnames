@@ -18,7 +18,7 @@ const Home = ({ posts, randomNames }) => {
   const router = useRouter();
   const { sub } = router.query;
   const sectionHeadings =
-    "w-full text-center  my-4  tracking-widest text-3xl font-bold lato  text-gray-500 font-extrabold";
+    "w-full text-center  my-4  tracking-widest text-3xl font-bold lato  font-extrabold";
 
   useEffect(() => {
     if (sub && sub === "1") {
@@ -27,7 +27,7 @@ const Home = ({ posts, randomNames }) => {
   }, [router, sub]);
   return (
     <>
-      <section className="p-2 bg-inherit relative flex flex-col justify-start items-center">
+      <section className="w-full p-2 bg-inherit relative flex flex-col justify-start items-center">
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-WLZYHVJXJ9"
@@ -70,6 +70,7 @@ const Home = ({ posts, randomNames }) => {
         <LeaderBoard />
         <Hero />
         <div className="">
+          <h3 className={sectionHeadings}>Latest Blog Posts</h3>
           <LatestPosts posts={posts} />
           <>
             <h3 className={sectionHeadings}>Today's Choice</h3>
@@ -112,7 +113,12 @@ export async function getServerSideProps() {
     {
       _id: "61cf8b547315e1586e0c0387",
       Name: "Bacha'ir",
-      Meaning: "means the beginnings",
+      Meaning: "means the beginnings.",
+    },
+    {
+      _id: "61d206577315e1586e0c0451",
+      Name: "Salma",
+      Meaning: "Means healthy or surviving.",
     },
   ];
   await connection();

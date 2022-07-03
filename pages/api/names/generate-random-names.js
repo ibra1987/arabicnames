@@ -23,7 +23,7 @@ async function handler(req, res) {
   try {
     await RandomName.deleteMany({});
 
-    const names = await Name.aggregate([{ $sample: { size: 3 } }]);
+    const names = await Name.aggregate([{ $sample: { size: 4 } }]);
     await RandomName.insertMany(names);
 
     res.status(200).json({ ok: "ok" });

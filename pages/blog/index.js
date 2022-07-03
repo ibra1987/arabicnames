@@ -27,7 +27,7 @@ const Index = ({ posts }) => {
   const InputStyle =
     " focus:border-gray-600 text-gray-800 w-11/12 my-6  mx-2 p-2 outline-none border border-gray-400 rounded border-gray-200";
   return (
-    <section className="w-full flex flex-col justify-start items-center   ">
+    <section className="w-full md:w-4/5 flex flex-col justify-start items-center   ">
       <Head>
         <title>Arabic girl names - blog</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -44,8 +44,8 @@ const Index = ({ posts }) => {
       />
       <LeaderBoard />
 
-      <div className=" w-11/12  p-2  md:flex lg:flex-row lg:justify-center lg:items-start  md:flex-col-reverse md:justify-start md:items-center ">
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-2 ">
+      <div className="w-full  mb-2 md:flex lg:flex-row lg:justify-center lg:items-start  md:flex-col-reverse md:justify-start md:items-center ">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-2 ">
           {displayedPosts.map((post) => (
             <SinglePost post={post} key={post.sys.id} />
           ))}
