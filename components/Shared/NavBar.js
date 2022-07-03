@@ -16,7 +16,7 @@ const NavBar = () => {
     "w-2/3 flex-row md:flex transition-all  duration-700 ease-in-out text-sm md:text-lg justify-end items-center px-2 ";
   const liClass = "my-2 mx-1 w-24 text-center py-2 ";
   const linkClass =
-    " block w-full  py-1   tracking-widest  text-gray-600 hover:text-white rounded hover:bg-pink-500 transition duration-750 ease-in";
+    " block w-full  py-1   tracking-widest  text-gray-100 hover:text-white rounded hover:bg-pink-500 transition duration-750 ease-in";
   const activeLinkClass =
     "    block w-full py-1 transition tracking-widest  bg-pink-500 text-white duration-750 ease-in rounded  ";
   //const { isLoading, loadingActions } = useContext(LoadingContext);

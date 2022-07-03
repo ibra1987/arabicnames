@@ -73,7 +73,6 @@ const Home = ({ posts, randomNames }) => {
           <h3 className={sectionHeadings}>Latest Blog Posts</h3>
           <LatestPosts posts={posts} />
           <>
-            <h3 className={sectionHeadings}>Today's Choice</h3>
             <RandomNames randomNames={randomNames} />
           </>
         </div>

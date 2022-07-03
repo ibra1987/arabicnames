@@ -25,7 +25,7 @@ const Alphabets = () => {
     "Z",
   ];
   return (
-    <div className="w-full p-4 md:w-4/5 mx-auto flex justify-center items-center my-6 bg-gray-700 shadow-md border">
+    <div className="w-full p-4 mx-auto flex justify-center items-center my-6 bg-gray-700 shadow-md border">
       <div className="w-11/12 md:w-3/5 grid grid-cols-10 gap-2">
         {alphabets.map((letter, index) => (
           <div

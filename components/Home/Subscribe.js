@@ -4,7 +4,7 @@ const Subscribe = () => {
   const styles =
     " w-11/12 md:w-2/5 py-3 outline-none bg-gray-600 mx-4 tracking-widest text-white cursor-pointer hover:bg-gray-700  font-bold ease-in duration-300  rounded-md popins";
   return (
-    <section className="w-full md:w-4/5  bg-pink-400 p-2 md:p-4 flex flex-col md:flex-row justify-center items-center">
+    <section className="w-full bg-pink-400 p-2 md:p-4 flex flex-col md:flex-row justify-center items-center">
       <h3 className="w-11/12 md:w-1/3 text-center tracking-widest font-extrabold my-2 text-white lato text-lg md:text-xl lg:text-2xl">
         Get notified when a new post is published{" "}
       </h3>
