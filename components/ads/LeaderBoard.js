@@ -43,7 +43,7 @@ const LeaderBoard = () => {
     }
   };
   return (
-    <div className="p-1 my-4 border rounded flex justify-center items-center">
+    <div className="p-1 w-11/12 my-4 border rounded flex justify-center items-center">
       {location !== "US" ? (
         <Link href={Ads[2].link}>
           <Image

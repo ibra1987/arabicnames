@@ -24,7 +24,7 @@ const Hero = () => {
 
   return (
     <section className="mb-4 py-10 w-full   border flex mt-4 shadow-lg rounded-md border-b flex-col justify-center  items-center ">
-      <h2 className="tracking-widest text-xl md:text-2xl  lg:text-3xl  text-center font-extrabold">
+      <h2 className="tracking-widest text-lg px-2 md:text-2xl  lg:text-3xl  text-center font-extrabold">
         Find The Best Arabic Girl Name Ever
       </h2>
       <SearchInput

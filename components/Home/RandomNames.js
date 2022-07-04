@@ -5,7 +5,7 @@ const RandomNames = ({ randomNames }) => {
   const [names, setNames] = useState(randomNames);
   const [loading, setLoading] = useState(false);
   const sectionHeadings =
-    "w-full text-center my-4  tracking-widest text-3xl font-bold lato  font-extrabold";
+    "w-full text-center px-2 my-4  tracking-widest text-xl md:text-3xl font-bold lato  font-extrabold";
 
   const btnStyles =
     "w-1/4 bg-white  text-gray-700 tracking-widest font-bold my-6 py-2 rounded-md hover:text-white ease-in duration-300  outline-none border underline shadow-md border-gray-700 hover:bg-gray-700";
